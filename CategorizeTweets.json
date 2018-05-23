@@ -1,760 +1,619 @@
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-
-<meta content="origin-when-cross-origin" name="referrer" />
-
-  <link crossorigin="anonymous" href="https://github.gatech.edu/assets/frameworks-86cd322445303c5c004f8612ba4b203e9dc7e7759558ffb5175639c167a7aed0.css" integrity="sha256-hs0yJEUwPFwAT4YSuksgPp3H53WVWP+1F1Y5wWenrtA=" media="all" rel="stylesheet" />
-  <link crossorigin="anonymous" href="https://github.gatech.edu/assets/github-8f51e6850027ed8c6ec35a281c258fd48341694f143156fb71c567a0f9ef0a7b.css" integrity="sha256-j1HmhQAn7Yxuw1ooHCWP1INBaU8UMVb7ccVnoPnvCns=" media="all" rel="stylesheet" />
-  
-  
-  
-  
-
-  <meta name="viewport" content="width=device-width">
-  
-  <title>BDHTwitterStreaming/CategorizeTweets.json at master · wkennedy30/BDHTwitterStreaming</title>
-  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
-  <link rel="fluid-icon" href="https://github.gatech.edu/fluidicon.png" title="GitHub">
-  <meta property="fb:app_id" content="1401488693436528">
-
-    
-    <meta content="https://github.gatech.edu/avatars/u/6174?s=400" property="og:image" /><meta content="GitHub Enterprise" property="og:site_name" /><meta content="object" property="og:type" /><meta content="wkennedy30/BDHTwitterStreaming" property="og:title" /><meta content="https://github.gatech.edu/wkennedy30/BDHTwitterStreaming" property="og:url" /><meta content="Contribute to BDHTwitterStreaming development by creating an account on GitHub." property="og:description" />
-
-  <link rel="assets" href="https://github.gatech.edu/">
-  <link rel="web-socket" href="wss://github.gatech.edu/_sockets/VjI6Mjc4NjEzOjU0MmNlZTU1NTY4NmQ0Mjg3M2Q1ODY4MzU0Y2RhMGFjNzQ1YTdhZWZmZWE5Njc0OTZiMWE2OWU1ZjdhODNjNDE=--b1f31183e78f0be6020bad3746e16a7593aa8393">
-  <meta name="pjax-timeout" content="1000">
-  <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="b791760a-371f-4ab3-a6ce-6db17bb9b7d3" data-pjax-transient>
-  
-
-  <meta name="selected-link" value="repo_source" data-pjax-transient>
-
-  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
-<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
-
-
-<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
-
-
-
-
-  <meta class="js-ga-set" name="dimension1" content="Logged In">
-
-
-  
-
-      <meta name="hostname" content="github.gatech.edu">
-  <meta name="user-login" content="kmandal3">
-
-
-
-  <meta name="html-safe-nonce" content="f57b01c48afef8bf34282911b093085a0f147669">
-
-  <meta http-equiv="x-pjax-version" content="8d1a3bf135941fae526c693db3bc8cec">
-  
-
-      <link href="https://github.gatech.edu/wkennedy30/BDHTwitterStreaming/commits/master.atom?token=AAAZFNW3h94Zhbvo-vf49nBxloWkFv4Gks65EidhwA%3D%3D" rel="alternate" title="Recent Commits to BDHTwitterStreaming:master" type="application/atom+xml">
-
-  <meta name="description" content="Contribute to BDHTwitterStreaming development by creating an account on GitHub.">
-  <meta name="go-import" content="github.gatech.edu/wkennedy30/BDHTwitterStreaming git https://github.gatech.edu/wkennedy30/BDHTwitterStreaming.git">
-
-  
-
-
-    <link rel="canonical" href="https://github.gatech.edu/wkennedy30/BDHTwitterStreaming/blob/master/final_deliverable/categorize_tweets/CategorizeTweets.json" data-pjax-transient>
-
-
-
-  <link rel="mask-icon" href="https://github.gatech.edu/pinned-octocat.svg" color="#000000">
-  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.gatech.edu/favicon-ent.ico">
-
-<meta name="theme-color" content="#1e2327">
-
-
-  <meta name="u2f-support" content="true">
-
-  </head>
-
-  <body class="logged-in enterprise env-production emoji-size-boost page-blob">
-    
-
-  <div class="position-relative js-header-wrapper ">
-    <a href="#start-of-content" tabindex="1" class="bg-black text-white p-3 show-on-focus js-skip-to-content">Skip to content</a>
-    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
-
-    
-    
-    
-
-
-
-        
-<header class="Header  f5" role="banner">
-  <div class="d-flex px-3 flex-justify-between container-lg">
-    <div class="d-flex flex-justify-between">
-      <a class="header-logo-invertocat" href="https://github.gatech.edu/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
-  <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-    <span class="header-logo-subbrand">Enterprise</span>
-</a>
-
-
-    </div>
-
-    <div class="HeaderMenu d-flex flex-justify-between flex-auto">
-      <div class="d-flex">
-            <div class="">
-              <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
-  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/wkennedy30/BDHTwitterStreaming/search" class="js-site-search-form" data-scoped-search-url="/wkennedy30/BDHTwitterStreaming/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-    <label class="form-control header-search-wrapper js-chromeless-input-container">
-        <a href="/wkennedy30/BDHTwitterStreaming/blob/master/final_deliverable/categorize_tweets/CategorizeTweets.json" class="header-search-scope no-underline">This repository</a>
-      <input type="text"
-        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
-        data-hotkey="s"
-        name="q"
-        value=""
-        placeholder="Search"
-        aria-label="Search this repository"
-        data-unscoped-placeholder="Search GitHub"
-        data-scoped-placeholder="Search"
-        autocapitalize="off">
-        <input type="hidden" class="js-site-search-type-field" name="type" >
-    </label>
-</form></div>
-
-            </div>
-
-          <ul class="d-flex pl-2 flex-items-center text-bold list-style-none" role="navigation">
-            <li>
-              <a href="/pulls" aria-label="Pull requests you created" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
-                Pull requests
-</a>            </li>
-            <li>
-              <a href="/issues" aria-label="Issues you created" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
-                Issues
-</a>            </li>
-            <li>
-              <a href="/explore" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore">
-                Explore
-</a>            </li>
-          </ul>
-      </div>
-
-      <div class="d-flex">
-        
-<ul class="user-nav d-flex flex-items-center list-style-none" id="user-links">
-  <li class="dropdown js-menu-container js-header-notifications">
-    <span class="d-inline-block  px-2">
-      
-      <a href="/notifications" aria-label="You have no unread notifications" class="notification-indicator tooltipped tooltipped-s  js-socket-channel js-notification-indicator" data-channel="notification-changed:6420" data-ga-click="Header, go to notifications, icon:read" data-hotkey="g n">
-          <span class="mail-status "></span>
-          <svg aria-hidden="true" class="octicon octicon-bell" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"/></svg>
-</a>
-    </span>
-  </li>
-
-  <li class="dropdown js-menu-container">
-    <details class="dropdown-details js-dropdown-details d-flex px-2 flex-items-center">
-      <summary class="HeaderNavlink"
-         aria-label="Create new…"
-         data-ga-click="Header, create new, icon:add">
-        <svg aria-hidden="true" class="octicon octicon-plus float-left mr-1 mt-1" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"/></svg>
-        <span class="dropdown-caret mt-1"></span>
-      </summary>
-
-      <ul class="dropdown-menu dropdown-menu-sw">
-        
-<a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
-  New repository
-</a>
-
-
-<a class="dropdown-item" href="https://github.gatech.edu/gist" data-ga-click="Header, create new gist">
-  New gist
-</a>
-
-  <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
-    New organization
-  </a>
-
-
-
-  <div class="dropdown-divider"></div>
-  <div class="dropdown-header">
-    <span title="wkennedy30/BDHTwitterStreaming">This repository</span>
-  </div>
-    <a class="dropdown-item" href="/wkennedy30/BDHTwitterStreaming/issues/new" data-ga-click="Header, create new issue">
-      New issue
-    </a>
-
-      </ul>
-    </details>
-  </li>
-
-  <li class="dropdown js-menu-container">
-
-    <details class="dropdown-details js-dropdown-details d-flex pl-2 flex-items-center">
-      <summary class="HeaderNavlink name mt-1"
-        aria-label="View profile and more"
-        data-ga-click="Header, show menu, icon:avatar">
-        <img alt="@kmandal3" class="avatar float-left mr-1" src="https://github.gatech.edu/avatars/u/6420?s=40" height="20" width="20">
-        <span class="dropdown-caret"></span>
-      </summary>
-
-      <ul class="dropdown-menu dropdown-menu-sw">
-        <li class="dropdown-header header-nav-current-user css-truncate">
-          Signed in as <strong class="css-truncate-target">kmandal3</strong>
-        </li>
-
-        <li class="dropdown-divider"></li>
-
-        <li><a class="dropdown-item" href="/kmandal3" data-ga-click="Header, go to profile, text:your profile">
-          Your profile
-        </a></li>
-        <li><a class="dropdown-item" href="/kmandal3?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">
-          Your stars
-        </a></li>
-          <li><a class="dropdown-item" href="https://github.gatech.edu/gist" data-ga-click="Header, your gists, text:your gists">Your Gists</a></li>
-
-        <li class="dropdown-divider"></li>
-
-        <li><a class="dropdown-item" href="https://help.github.com/enterprise/2.12/user" data-ga-click="Header, go to help, text:help">
-          Help
-        </a></li>
-
-        <li><a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">
-          Settings
-        </a></li>
-
-        <li><!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="m6tLTMSJU7bt0hyFmXOhi9SGbJ7gFI/wtadi3ignwgp70aGODpH6i4IpGUfntqsWJBJ1bETkAV3lVZbquBO7cg==" /></div>
-          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
-            Sign out
-          </button>
-        </form></li>
-      </ul>
-    </details>
-  </li>
-</ul>
-
-
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="VUlRS/jQ8BEVe+s/SY2xgHraXmkGzZPWLRGWVNvg7iq1M7uJMshZLHqA7v03SLsdik5Hm6I9HXt942JgS9SXUg==" /></div>
-          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
-            Sign out
-          </button>
-</form>      </div>
-    </div>
-  </div>
-</header>
-
-
-      
-
-  </div>
-
-  <div id="start-of-content" class="show-on-focus"></div>
-
-    <div id="js-flash-container">
-</div>
-
-
-
-  <div role="main">
-        <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
-    <div id="js-repo-pjax-container" data-pjax-container>
-      
-
-
-
-
-
-    <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav ">
-      <div class="repohead-details-container clearfix container ">
-
-        <ul class="pagehead-actions">
-  <li>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="26n+3Y+gk7aM4sAxIAmtm5y3CUQT5zyyEGzF6qxnzIALHQnUZHPRIYvit8Vl2eW9Q4UbqeMxrNUTWPStoYZJOQ==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="57284" />
-
-        <div class="select-menu js-menu-container js-select-menu">
-          <a href="/wkennedy30/BDHTwitterStreaming/subscription"
-            class="btn btn-sm btn-with-count select-menu-button js-menu-target"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-            aria-label="Toggle repository notifications menu"
-            data-ga-click="Repository, click Watch settings, action:blob#show">
-            <span class="js-select-button">
-                <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
-                Unwatch
-            </span>
-          </a>
-            <a class="social-count js-social-count"
-              href="/wkennedy30/BDHTwitterStreaming/watchers"
-              aria-label="3 users are watching this repository">
-              3
-            </a>
-
-        <div class="select-menu-modal-holder">
-          <div class="select-menu-modal subscription-menu-modal js-menu-content">
-            <div class="select-menu-header js-navigation-enable" tabindex="-1">
-              <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
-              <span class="select-menu-title">Notifications</span>
-            </div>
-
-              <div class="select-menu-list js-navigation-container" role="menu">
-
-                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
-                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
-                  <div class="select-menu-item-text">
-                    <input id="do_included" name="do" type="radio" value="included" />
-                    <span class="select-menu-item-heading">Not watching</span>
-                    <span class="description">Be notified when participating or @mentioned.</span>
-                    <span class="js-select-button-text hidden-select-button-text">
-                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
-                      Watch
-                    </span>
-                  </div>
-                </div>
-
-                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
-                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
-                  <div class="select-menu-item-text">
-                    <input checked="checked" id="do_subscribed" name="do" type="radio" value="subscribed" />
-                    <span class="select-menu-item-heading">Watching</span>
-                    <span class="description">Be notified of all conversations.</span>
-                    <span class="js-select-button-text hidden-select-button-text">
-                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
-                        Unwatch
-                    </span>
-                  </div>
-                </div>
-
-                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
-                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
-                  <div class="select-menu-item-text">
-                    <input id="do_ignore" name="do" type="radio" value="ignore" />
-                    <span class="select-menu-item-heading">Ignoring</span>
-                    <span class="description">Never be notified.</span>
-                    <span class="js-select-button-text hidden-select-button-text">
-                      <svg aria-hidden="true" class="octicon octicon-mute" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"/></svg>
-                        Stop ignoring
-                    </span>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-</form>
-  </li>
-
-  <li>
-    
-  <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/wkennedy30/BDHTwitterStreaming/unstar" class="starred js-social-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="2hlCkVO8aMUfLjAdcn56zxvDBlvmgfytVWyHs09Zxa5D+eoUOSBXBLXkoW78ueqrDCKmYmvzwFvBxrl9ij6ymw==" /></div>
-      <input type="hidden" name="context" value="repository"></input>
-      <button
-        type="submit"
-        class="btn btn-sm btn-with-count js-toggler-target"
-        aria-label="Unstar this repository" title="Unstar wkennedy30/BDHTwitterStreaming"
-        data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
-        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
-        Unstar
-      </button>
-        <a class="social-count js-social-count" href="/wkennedy30/BDHTwitterStreaming/stargazers"
-           aria-label="0 users starred this repository">
-          0
-        </a>
-</form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/wkennedy30/BDHTwitterStreaming/star" class="unstarred js-social-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="P0jl0j77L2FQPu7oefn5R4AyS/9oHerQw5v8cFhmj32MMcSanX0gLITU8AsFM2ygdP7jUpMUIcsNCiDkumoQKA==" /></div>
-      <input type="hidden" name="context" value="repository"></input>
-      <button
-        type="submit"
-        class="btn btn-sm btn-with-count js-toggler-target"
-        aria-label="Star this repository" title="Star wkennedy30/BDHTwitterStreaming"
-        data-ga-click="Repository, click star button, action:blob#show; text:Star">
-        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
-        Star
-      </button>
-        <a class="social-count js-social-count" href="/wkennedy30/BDHTwitterStreaming/stargazers"
-           aria-label="0 users starred this repository">
-          0
-        </a>
-</form>  </div>
-
-  </li>
-
-  <li>
-          <a href="#fork-destination-box" class="btn btn-sm btn-with-count"
-              title="Fork your own copy of wkennedy30/BDHTwitterStreaming to your account"
-              aria-label="Fork your own copy of wkennedy30/BDHTwitterStreaming to your account"
-              rel="facebox"
-              data-ga-click="Repository, show fork modal, action:blob#show; text:Fork">
-              <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
-            Fork
-          </a>
-
-          <div id="fork-destination-box" style="display: none;">
-            <h2 class="facebox-header" data-facebox-id="facebox-header">Where should we fork this repository?</h2>
-            <include-fragment src=""
-                class="js-fork-select-fragment fork-select-fragment"
-                data-url="/wkennedy30/BDHTwitterStreaming/fork?fragment=1">
-              <img alt="Loading" height="64" src="https://github.gatech.edu/images/spinners/octocat-spinner-128.gif" width="64" />
-            </include-fragment>
-          </div>
-
-    <a href="/wkennedy30/BDHTwitterStreaming/network" class="social-count"
-       aria-label="1 user forked this repository">
-      1
-    </a>
-  </li>
-</ul>
-
-        <h1 class="private ">
-  <svg aria-hidden="true" class="octicon octicon-lock" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 13H3v-1h1v1zm8-6v7c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h1V4c0-2.2 1.8-4 4-4s4 1.8 4 4v2h1c.55 0 1 .45 1 1zM3.8 6h4.41V4c0-1.22-.98-2.2-2.2-2.2-1.22 0-2.2.98-2.2 2.2v2H3.8zM11 7H2v7h9V7zM4 8H3v1h1V8zm0 2H3v1h1v-1z"/></svg>
-  <span class="author" itemprop="author"><a href="/wkennedy30" class="url fn" rel="author">wkennedy30</a></span><!--
---><span class="path-divider">/</span><!--
---><strong itemprop="name"><a href="/wkennedy30/BDHTwitterStreaming" data-pjax="#js-repo-pjax-container">BDHTwitterStreaming</a></strong>
-    <span class="Label Label--outline v-align-middle">Private</span>
-
-</h1>
-
-      </div>
-      
-<nav class="reponav js-repo-nav js-sidenav-container-pjax container"
-     itemscope
-     itemtype="http://schema.org/BreadcrumbList"
-     role="navigation"
-     data-pjax="#js-repo-pjax-container">
-
-  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a href="/wkennedy30/BDHTwitterStreaming" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /wkennedy30/BDHTwitterStreaming" itemprop="url">
-      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
-      <span itemprop="name">Code</span>
-      <meta itemprop="position" content="1">
-</a>  </span>
-
-    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <a href="/wkennedy30/BDHTwitterStreaming/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /wkennedy30/BDHTwitterStreaming/issues" itemprop="url">
-        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
-        <span itemprop="name">Issues</span>
-        <span class="Counter">0</span>
-        <meta itemprop="position" content="2">
-</a>    </span>
-
-  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a href="/wkennedy30/BDHTwitterStreaming/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /wkennedy30/BDHTwitterStreaming/pulls" itemprop="url">
-      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
-      <span itemprop="name">Pull requests</span>
-      <span class="Counter">0</span>
-      <meta itemprop="position" content="3">
-</a>  </span>
-
-    <a href="/wkennedy30/BDHTwitterStreaming/projects" class="js-selected-navigation-item reponav-item" data-hotkey="g b" data-selected-links="repo_projects new_repo_project repo_project /wkennedy30/BDHTwitterStreaming/projects">
-      <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewBox="0 0 15 16" width="15"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
-      Projects
-      <span class="Counter" >0</span>
-</a>
-    <a href="/wkennedy30/BDHTwitterStreaming/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /wkennedy30/BDHTwitterStreaming/wiki">
-      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
-      Wiki
-</a>
-
-  <a href="/wkennedy30/BDHTwitterStreaming/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse /wkennedy30/BDHTwitterStreaming/pulse">
-    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
-    Insights
-</a>
-
-</nav>
-
-
-    </div>
-
-<div class="container new-discussion-timeline experiment-repo-nav">
-  <div class="repository-content">
-
-    
-  <a href="/wkennedy30/BDHTwitterStreaming/blob/c0dcf996ed0ad76234ef9f3d893b6b45ccbd88a6/final_deliverable/categorize_tweets/CategorizeTweets.json" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
-
-  <!-- blob contrib key: blob_contributors:v21:e7b41dfaa49500de6268dc919e8097ab -->
-
-  <div class="file-navigation js-zeroclipboard-container">
-    
-<div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
-  <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
-    
-    type="button" aria-label="Switch branches or tags" aria-expanded="false" aria-haspopup="true">
-      <i>Branch:</i>
-      <span class="js-select-button css-truncate-target">master</span>
-  </button>
-
-  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax>
-
-    <div class="select-menu-modal">
-      <div class="select-menu-header">
-        <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
-        <span class="select-menu-title">Switch branches/tags</span>
-      </div>
-
-      <div class="select-menu-filters">
-        <div class="select-menu-text-filter">
-          <input type="text" aria-label="Find or create a branch…" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Find or create a branch…">
-        </div>
-        <div class="select-menu-tabs">
-          <ul>
-            <li class="select-menu-tab">
-              <a href="#" data-tab-filter="branches" data-filter-placeholder="Find or create a branch…" class="js-select-menu-tab" role="tab">Branches</a>
-            </li>
-            <li class="select-menu-tab">
-              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
-
-        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
-
-
-            <a class="select-menu-item js-navigation-item js-navigation-open selected"
-               href="/wkennedy30/BDHTwitterStreaming/blob/master/final_deliverable/categorize_tweets/CategorizeTweets.json"
-               data-name="master"
-               data-skip-pjax="true"
-               rel="nofollow">
-              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
-              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
-                master
-              </span>
-            </a>
-            <a class="select-menu-item js-navigation-item js-navigation-open "
-               href="/wkennedy30/BDHTwitterStreaming/blob/willis/final_deliverable/categorize_tweets/CategorizeTweets.json"
-               data-name="willis"
-               data-skip-pjax="true"
-               rel="nofollow">
-              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
-              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
-                willis
-              </span>
-            </a>
-        </div>
-
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/wkennedy30/BDHTwitterStreaming/branches" class="js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="OXzkTPvReQdlod1wBiHKFxlPG8VN0fnBdhN0Nks16buw/huIaUukgfHuWkk+ffcLkf/MupCcxST0d2yPBvx2aQ==" /></div>
-          <svg aria-hidden="true" class="octicon octicon-git-branch select-menu-item-icon" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
-            <div class="select-menu-item-text">
-              <span class="select-menu-item-heading">Create branch: <span class="js-new-item-name"></span></span>
-              <span class="description">from ‘master’</span>
-            </div>
-            <input type="hidden" name="name" id="name" class="js-new-item-value">
-            <input type="hidden" name="branch" id="branch" value="master">
-            <input type="hidden" name="path" id="path" value="final_deliverable/categorize_tweets/CategorizeTweets.json">
-</form>
-      </div>
-
-      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
-        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
-
-
-        </div>
-
-        <div class="select-menu-no-results">Nothing to show</div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-    <div class="BtnGroup float-right">
-      <a href="/wkennedy30/BDHTwitterStreaming/find/master"
-            class="js-pjax-capture-input btn btn-sm BtnGroup-item"
-            data-pjax
-            data-hotkey="t">
-        Find file
-      </a>
-      <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
-    </div>
-    <div class="breadcrumb js-zeroclipboard-target">
-      <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/wkennedy30/BDHTwitterStreaming"><span>BDHTwitterStreaming</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/wkennedy30/BDHTwitterStreaming/tree/master/final_deliverable"><span>final_deliverable</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/wkennedy30/BDHTwitterStreaming/tree/master/final_deliverable/categorize_tweets"><span>categorize_tweets</span></a></span><span class="separator">/</span><strong class="final-path">CategorizeTweets.json</strong>
-    </div>
-  </div>
-
-
-  
-  <div class="commit-tease">
-      <span class="float-right">
-        <a class="commit-tease-sha" href="/wkennedy30/BDHTwitterStreaming/commit/6d5d5f69783d6f97660ffe253fefa81f97103759" data-pjax>
-          6d5d5f6
-        </a>
-        <relative-time datetime="2017-04-26T07:48:06Z">Apr 26, 2017</relative-time>
-      </span>
-      <div>
-        <img alt="" class="avatar" height="20" src="https://github.gatech.edu/images/gravatars/gravatar-user-420.png" width="20" />
-        <span class="user-mention">mormigil</span>
-          <a href="/wkennedy30/BDHTwitterStreaming/commit/6d5d5f69783d6f97660ffe253fefa81f97103759" class="message" data-pjax="true" title="Pushing python code and other zeppelin notebooks">Pushing python code and other zeppelin notebooks</a>
-      </div>
-
-    <div class="commit-tease-contributors">
-      <button type="button" class="btn-link muted-link contributors-toggle" data-facebox="#blob_contributors_box">
-        <strong>0</strong>
-         contributors
-      </button>
-      
-    </div>
-
-    <div id="blob_contributors_box" style="display:none">
-      <h2 class="facebox-header" data-facebox-id="facebox-header">Users who have contributed to this file</h2>
-      <ul class="facebox-user-list" data-facebox-id="facebox-description">
-      </ul>
-    </div>
-  </div>
-
-
-  <div class="file">
-    <div class="file-header">
-  <div class="file-actions">
-
-    <div class="BtnGroup">
-      <a href="/wkennedy30/BDHTwitterStreaming/raw/master/final_deliverable/categorize_tweets/CategorizeTweets.json" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
-        <a href="/wkennedy30/BDHTwitterStreaming/blame/master/final_deliverable/categorize_tweets/CategorizeTweets.json" class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b">Blame</a>
-      <a href="/wkennedy30/BDHTwitterStreaming/commits/master/final_deliverable/categorize_tweets/CategorizeTweets.json" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
-    </div>
-
-        <a class="btn-octicon tooltipped tooltipped-nw"
-           href="github-mac://openRepo/https://github.gatech.edu/wkennedy30/BDHTwitterStreaming?branch=master&amp;filepath=final_deliverable%2Fcategorize_tweets%2FCategorizeTweets.json"
-           aria-label="Open this file in GitHub Desktop"
-           data-ga-click="Repository, open with desktop, type:mac">
-            <svg aria-hidden="true" class="octicon octicon-device-desktop" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
-        </a>
-
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/wkennedy30/BDHTwitterStreaming/edit/master/final_deliverable/categorize_tweets/CategorizeTweets.json" class="inline-form js-update-url-with-hash" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="6mlZ5ai2cwYulm35Ksw1WGzcheZgThxi2xRnA5xO201cbNQFrcOuOP/m4xfCpdv8UdcpeAQYW4hLxlam4exzOw==" /></div>
-          <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
-            aria-label="Edit this file" data-hotkey="e" data-disable-with>
-            <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
-          </button>
-</form>        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/wkennedy30/BDHTwitterStreaming/delete/master/final_deliverable/categorize_tweets/CategorizeTweets.json" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="4cvmBEjAwN0dlycJc0i0ka5YB6Q/CFyRcYobj4KuJjU9ovCN6mvnPxipbc8mQuE7QAx/haznq1ElBmVuIKDJAA==" /></div>
-          <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
-            aria-label="Delete this file" data-disable-with>
-            <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
-          </button>
-</form>  </div>
-
-  <div class="file-info">
-      1 lines (1 sloc)
-      <span class="file-info-divider"></span>
-    9.62 KB
-  </div>
-</div>
-
-    
-
-  <div itemprop="text" class="blob-wrapper data type-json">
-      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
-      <tr>
-        <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="LC1" class="blob-code blob-code-inner js-file-line">﻿{&quot;paragraphs&quot;:[{&quot;text&quot;:&quot;%livy.spark\nimport org.apache.spark.ml.feature.Tokenizer\nimport org.apache.spark.ml.feature.{IDF, HashingTF}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\nimport org.apache.spark.ml.classification.{GBTClassificationModel, GBTClassifier}\nimport org.apache.spark.ml.classification.{BinaryLogisticRegressionSummary, LogisticRegression, LogisticRegressionModel}\nimport org.apache.spark.ml.feature.Word2Vec\nimport spark.sql\nimport spark.implicits._\n\n\ncase class TweetObj(location: String, timestamp: String, tweetId: String, tweetText: String)\n\ncase class LabeledTweet(location: String, timestamp: String, tweetId: String, tweetText: String, label: Double)\n\n\nval fluPattern = \&quot;(\\\\b|\\\\p{Punct})(flu)(\\\\b|\\\\p{Punct}|shot)\&quot;.r\nval influenzaPattern = \&quot;(\\\\b|\\\\p{Punct})(influenza)(\\\\b|\\\\p{Punct})\&quot;.r&quot;,&quot;user&quot;:&quot;anonymous&quot;,&quot;dateUpdated&quot;:&quot;2017-04-26T07:03:16+0000&quot;,&quot;config&quot;:{&quot;colWidth&quot;:12,&quot;enabled&quot;:true,&quot;results&quot;:{},&quot;editorSetting&quot;:{&quot;language&quot;:&quot;scala&quot;,&quot;editOnDblClick&quot;:false},&quot;editorMode&quot;:&quot;ace/mode/scala&quot;},&quot;settings&quot;:{&quot;params&quot;:{},&quot;forms&quot;:{}},&quot;results&quot;:{&quot;code&quot;:&quot;SUCCESS&quot;,&quot;msg&quot;:[{&quot;type&quot;:&quot;TEXT&quot;,&quot;data&quot;:&quot;influenzaPattern: scala.util.matching.Regex = (\\b|\\p{Punct})(influenza)(\\b|\\p{Punct})&quot;}]},&quot;apps&quot;:[],&quot;jobName&quot;:&quot;paragraph_1493012642440_1367683182&quot;,&quot;id&quot;:&quot;20170424-054402_748680380&quot;,&quot;dateCreated&quot;:&quot;2017-04-24T05:44:02+0000&quot;,&quot;dateStarted&quot;:&quot;2017-04-26T07:03:16+0000&quot;,&quot;dateFinished&quot;:&quot;2017-04-26T07:03:18+0000&quot;,&quot;status&quot;:&quot;FINISHED&quot;,&quot;progressUpdateIntervalMs&quot;:500,&quot;focus&quot;:true,&quot;$$hashKey&quot;:&quot;object:1512&quot;},{&quot;text&quot;:&quot;%livy.spark\n\nval locationTweetsFolder = \&quot;wasb:///twitterdata/locationTweets/april2016/april2016_2\&quot;\nval fluTweetsFolder = \&quot;wasb:///twitterdata/fluTweets/april_flu/fluJson\&quot;\n\nval locationTweets = spark.read.json(locationTweetsFolder).as[TweetObj]\n\nval fluTweets = locationTweets.filter(x=&gt; (fluPattern.findFirstIn(x.tweetText.toLowerCase()).isDefined||influenzaPattern.findFirstIn(x.tweetText.toLowerCase()).isDefined))//.sample(false, .001)\nprintln(fluTweets.count() + \&quot;, \&quot; + locationTweets.count())\n// fluTweets.coalesce(1).write.format(\&quot;json\&quot;).save(fluTweetsFolder)&quot;,&quot;user&quot;:&quot;anonymous&quot;,&quot;dateUpdated&quot;:&quot;2017-04-26T07:03:22+0000&quot;,&quot;config&quot;:{&quot;colWidth&quot;:12,&quot;enabled&quot;:true,&quot;results&quot;:{},&quot;editorSetting&quot;:{&quot;editOnDblClick&quot;:false,&quot;language&quot;:&quot;scala&quot;},&quot;editorMode&quot;:&quot;ace/mode/scala&quot;},&quot;settings&quot;:{&quot;params&quot;:{},&quot;forms&quot;:{}},&quot;results&quot;:{&quot;code&quot;:&quot;SUCCESS&quot;,&quot;msg&quot;:[{&quot;type&quot;:&quot;TEXT&quot;,&quot;data&quot;:&quot;619, 7112516&quot;}]},&quot;apps&quot;:[],&quot;jobName&quot;:&quot;paragraph_1492307235791_1000883117&quot;,&quot;id&quot;:&quot;20170416-014715_1356014894&quot;,&quot;dateCreated&quot;:&quot;2017-04-16T01:47:15+0000&quot;,&quot;dateStarted&quot;:&quot;2017-04-26T07:03:22+0000&quot;,&quot;dateFinished&quot;:&quot;2017-04-26T07:04:13+0000&quot;,&quot;status&quot;:&quot;FINISHED&quot;,&quot;progressUpdateIntervalMs&quot;:500,&quot;$$hashKey&quot;:&quot;object:1513&quot;},{&quot;text&quot;:&quot;%livy.spark\nval aprFluTweets = spark.read.parquet(\&quot;wasb:///twitterdata/fluTweets/jan_flu/take1.parquet\&quot;).coalesce(1)\naprFluTweets.write.format(\&quot;json\&quot;).save(\&quot;wasb:///twitterdata/fluTweets/jan_flu/jsonResults\&quot;)&quot;,&quot;user&quot;:&quot;anonymous&quot;,&quot;dateUpdated&quot;:&quot;2017-04-17T06:31:23+0000&quot;,&quot;config&quot;:{&quot;colWidth&quot;:12,&quot;enabled&quot;:true,&quot;results&quot;:{},&quot;editorSetting&quot;:{&quot;editOnDblClick&quot;:false,&quot;language&quot;:&quot;scala&quot;},&quot;editorMode&quot;:&quot;ace/mode/scala&quot;},&quot;settings&quot;:{&quot;params&quot;:{},&quot;forms&quot;:{}},&quot;results&quot;:{&quot;code&quot;:&quot;SUCCESS&quot;,&quot;msg&quot;:[]},&quot;apps&quot;:[],&quot;jobName&quot;:&quot;paragraph_1492369357461_-1078647527&quot;,&quot;id&quot;:&quot;20170416-190237_2111873966&quot;,&quot;dateCreated&quot;:&quot;2017-04-16T19:02:37+0000&quot;,&quot;dateStarted&quot;:&quot;2017-04-17T06:31:23+0000&quot;,&quot;dateFinished&quot;:&quot;2017-04-17T06:31:26+0000&quot;,&quot;status&quot;:&quot;FINISHED&quot;,&quot;progressUpdateIntervalMs&quot;:500,&quot;$$hashKey&quot;:&quot;object:1514&quot;},{&quot;text&quot;:&quot;%livy.spark\n\n\nval allJanData = spark.read.json(\&quot;wasb:///twitterdata/locationTweets/jan2017\&quot;).as[TweetObj]\n\nval tokenizer = new Tokenizer().setInputCol(\&quot;tweetText\&quot;).setOutputCol(\&quot;words\&quot;)\nval hashingTF = new HashingTF().setInputCol(tokenizer.getOutputCol).setOutputCol(\&quot;rawFeatures\&quot;)\nval idf = new IDF().setInputCol(\&quot;rawFeatures\&quot;).setOutputCol(\&quot;features\&quot;)\n\nval idfPipeline = new Pipeline().setStages(Array(tokenizer, hashingTF, idf))\n\n// val word2Vec = new Word2Vec().setInputCol(tokenizer.getOutputCol).setOutputCol(\&quot;features\&quot;).setVectorSize(3)\n\n// val w2vPipeline = new Pipeline().setStages(Array(tokenizer, word2Vec))\n\n// val w2vModel = w2vPipeline.fit(allJanData)\n\nval idfModel = idfPipeline.fit(allJanData)\n&quot;,&quot;user&quot;:&quot;anonymous&quot;,&quot;dateUpdated&quot;:&quot;2017-04-26T06:58:45+0000&quot;,&quot;config&quot;:{&quot;colWidth&quot;:12,&quot;enabled&quot;:true,&quot;results&quot;:{},&quot;editorSetting&quot;:{&quot;language&quot;:&quot;scala&quot;,&quot;editOnDblClick&quot;:false},&quot;editorMode&quot;:&quot;ace/mode/scala&quot;},&quot;settings&quot;:{&quot;params&quot;:{},&quot;forms&quot;:{}},&quot;results&quot;:{&quot;code&quot;:&quot;SUCCESS&quot;,&quot;msg&quot;:[{&quot;type&quot;:&quot;TEXT&quot;,&quot;data&quot;:&quot;idfModel: org.apache.spark.ml.PipelineModel = pipeline_aee08f2fd1c3&quot;}]},&quot;apps&quot;:[],&quot;jobName&quot;:&quot;paragraph_1492970850825_1657322098&quot;,&quot;id&quot;:&quot;20170423-180730_45082278&quot;,&quot;dateCreated&quot;:&quot;2017-04-23T18:07:30+0000&quot;,&quot;dateStarted&quot;:&quot;2017-04-26T06:58:45+0000&quot;,&quot;dateFinished&quot;:&quot;2017-04-26T06:59:44+0000&quot;,&quot;status&quot;:&quot;FINISHED&quot;,&quot;progressUpdateIntervalMs&quot;:500,&quot;$$hashKey&quot;:&quot;object:1515&quot;},{&quot;text&quot;:&quot;%livy.spark\n\nval janNotFlu = \&quot;wasb:///twitterdata/fluTweets/jan_flu/notFluJson1\&quot;\nval febFlu = \&quot;wasb:///twitterdata/fluTweets/feb_flu/notFluJson1\&quot;\nval janFlu = \&quot;wasb:///twitterdata/fluTweets/jan_flu/jsonResults5\&quot;\n\nval trainNotFlu = spark.read.json(janNotFlu).as[TweetObj]\n// trainNotFlu.show.withColumn(\&quot;label\&quot;, \&quot;0\&quot;).show()\nval labeledNotFlu = trainNotFlu.map(x=&gt;LabeledTweet(x.location, x.timestamp, x.tweetId, x.tweetText, 0.0))\nval trainFluFeb = spark.read.json(febFlu).as[TweetObj]\nval trainFluJan = spark.read.json(janFlu).as[TweetObj]\nval labeledFlu = trainFluJan.union(trainFluFeb).map(x=&gt;LabeledTweet(x.location, x.timestamp, x.tweetId, x.tweetText, 1.0))\nval trainData = labeledNotFlu.union(labeledFlu)&quot;,&quot;user&quot;:&quot;anonymous&quot;,&quot;dateUpdated&quot;:&quot;2017-04-26T07:01:32+0000&quot;,&quot;config&quot;:{&quot;colWidth&quot;:12,&quot;enabled&quot;:true,&quot;results&quot;:{},&quot;editorSetting&quot;:{&quot;editOnDblClick&quot;:false,&quot;language&quot;:&quot;scala&quot;},&quot;editorMode&quot;:&quot;ace/mode/scala&quot;},&quot;settings&quot;:{&quot;params&quot;:{},&quot;forms&quot;:{}},&quot;results&quot;:{&quot;code&quot;:&quot;SUCCESS&quot;,&quot;msg&quot;:[{&quot;type&quot;:&quot;TEXT&quot;,&quot;data&quot;:&quot;trainData: org.apache.spark.sql.Dataset[LabeledTweet] = [location: string, timestamp: string ... 3 more fields]&quot;}]},&quot;apps&quot;:[],&quot;jobName&quot;:&quot;paragraph_1492402991599_755668537&quot;,&quot;id&quot;:&quot;20170417-042311_1154291848&quot;,&quot;dateCreated&quot;:&quot;2017-04-17T04:23:11+0000&quot;,&quot;dateStarted&quot;:&quot;2017-04-26T07:01:32+0000&quot;,&quot;dateFinished&quot;:&quot;2017-04-26T07:01:35+0000&quot;,&quot;status&quot;:&quot;FINISHED&quot;,&quot;progressUpdateIntervalMs&quot;:500,&quot;$$hashKey&quot;:&quot;object:1516&quot;},{&quot;text&quot;:&quot;%livy.spark\n// val gbt = new GBTClassifier().setMaxIter(10)\nval lr = new LogisticRegression().setMaxIter(10)\n\n// val model = gbt.fit(tfIdfRes)\n\nval pipeline = new Pipeline().setStages(Array(idfModel, lr))\n\nval paramGrid = new ParamGridBuilder().addGrid(lr.regParam, Array(0.1, 0.01)).build()\n  \nval cv = new CrossValidator().setEstimator(pipeline).setEvaluator(new BinaryClassificationEvaluator).setEstimatorParamMaps(paramGrid).setNumFolds(2)\n\nval model = cv.fit(trainData)\n\nmodel.avgMetrics.foreach(println(_))&quot;,&quot;user&quot;:&quot;anonymous&quot;,&quot;dateUpdated&quot;:&quot;2017-04-26T07:01:43+0000&quot;,&quot;config&quot;:{&quot;colWidth&quot;:12,&quot;enabled&quot;:true,&quot;results&quot;:{},&quot;editorSetting&quot;:{&quot;language&quot;:&quot;scala&quot;,&quot;editOnDblClick&quot;:false},&quot;editorMode&quot;:&quot;ace/mode/scala&quot;},&quot;settings&quot;:{&quot;params&quot;:{},&quot;forms&quot;:{}},&quot;results&quot;:{&quot;code&quot;:&quot;SUCCESS&quot;,&quot;msg&quot;:[{&quot;type&quot;:&quot;TEXT&quot;,&quot;data&quot;:&quot;0.9742345964200028\n0.9669628625573845&quot;}]},&quot;apps&quot;:[],&quot;jobName&quot;:&quot;paragraph_1493012770758_-1635850623&quot;,&quot;id&quot;:&quot;20170424-054610_459810039&quot;,&quot;dateCreated&quot;:&quot;2017-04-24T05:46:10+0000&quot;,&quot;dateStarted&quot;:&quot;2017-04-26T07:01:43+0000&quot;,&quot;dateFinished&quot;:&quot;2017-04-26T07:02:05+0000&quot;,&quot;status&quot;:&quot;FINISHED&quot;,&quot;progressUpdateIntervalMs&quot;:500,&quot;$$hashKey&quot;:&quot;object:1517&quot;},{&quot;text&quot;:&quot;%livy.spark\n\n// Testing model results\n\nval caseClassDS = Seq(TweetObj(\&quot;\&quot;, \&quot;\&quot;, \&quot;\&quot;, \&quot;I feel unwell achy and have the flu\&quot;)).toDS()\n\nval marFlu = spark.read.json(\&quot;wasb:///twitterdata/fluTweets/mar_flu/fluJson\&quot;).as[TweetObj]\n\n// val febFlu = spark.read.json(\&quot;wasb:///twitterdata/locationTweets/feb2016\&quot;).as[TweetObj]\n\nval marResult = model.transform(marFlu)\n\n// febResult.filter($\&quot;prediction\&quot;&gt;0).select(\&quot;tweetText\&quot;, \&quot;probability\&quot;, \&quot;words\&quot;).write.format(\&quot;json\&quot;).save(\&quot;wasb:///twitterdata/febPositiveResults1\&quot;)\n\nmarResult.groupBy($\&quot;prediction\&quot;).count().show()&quot;,&quot;user&quot;:&quot;anonymous&quot;,&quot;dateUpdated&quot;:&quot;2017-04-26T07:02:14+0000&quot;,&quot;config&quot;:{&quot;colWidth&quot;:12,&quot;enabled&quot;:true,&quot;results&quot;:{},&quot;editorSetting&quot;:{&quot;language&quot;:&quot;scala&quot;,&quot;editOnDblClick&quot;:false},&quot;editorMode&quot;:&quot;ace/mode/scala&quot;},&quot;settings&quot;:{&quot;params&quot;:{&quot;binarySummary.areaUnderROC&quot;:&quot;&quot;},&quot;forms&quot;:{}},&quot;results&quot;:{&quot;code&quot;:&quot;SUCCESS&quot;,&quot;msg&quot;:[{&quot;type&quot;:&quot;TEXT&quot;,&quot;data&quot;:&quot;+----------+-----+\n|prediction|count|\n+----------+-----+\n|       0.0|  324|\n|       1.0|  183|\n+----------+-----+&quot;}]},&quot;apps&quot;:[],&quot;jobName&quot;:&quot;paragraph_1492414901667_1166951881&quot;,&quot;id&quot;:&quot;20170417-074141_800630828&quot;,&quot;dateCreated&quot;:&quot;2017-04-17T07:41:41+0000&quot;,&quot;dateStarted&quot;:&quot;2017-04-26T07:02:14+0000&quot;,&quot;dateFinished&quot;:&quot;2017-04-26T07:02:17+0000&quot;,&quot;status&quot;:&quot;FINISHED&quot;,&quot;progressUpdateIntervalMs&quot;:500,&quot;$$hashKey&quot;:&quot;object:1518&quot;},{&quot;text&quot;:&quot;%livy.spark\n&quot;,&quot;user&quot;:&quot;anonymous&quot;,&quot;dateUpdated&quot;:&quot;2017-04-23T01:52:43+0000&quot;,&quot;config&quot;:{&quot;colWidth&quot;:12,&quot;enabled&quot;:true,&quot;results&quot;:{},&quot;editorSetting&quot;:{&quot;language&quot;:&quot;scala&quot;,&quot;editOnDblClick&quot;:false},&quot;editorMode&quot;:&quot;ace/mode/scala&quot;},&quot;settings&quot;:{&quot;params&quot;:{},&quot;forms&quot;:{}},&quot;apps&quot;:[],&quot;jobName&quot;:&quot;paragraph_1492912363615_116767465&quot;,&quot;id&quot;:&quot;20170423-015243_522045086&quot;,&quot;dateCreated&quot;:&quot;2017-04-23T01:52:43+0000&quot;,&quot;status&quot;:&quot;READY&quot;,&quot;progressUpdateIntervalMs&quot;:500,&quot;$$hashKey&quot;:&quot;object:1519&quot;}],&quot;name&quot;:&quot;CategorizeTweets&quot;,&quot;id&quot;:&quot;2CFZZPQS9&quot;,&quot;angularObjects&quot;:{&quot;2CE8MPCGH:shared_process&quot;:[],&quot;2CDYMB841:shared_process&quot;:[],&quot;2CE2KGHMJ:shared_process&quot;:[],&quot;2CEK25UGK:shared_process&quot;:[],&quot;2CF8YRDMK:shared_process&quot;:[],&quot;2CE5UEF6Q:shared_process&quot;:[]},&quot;config&quot;:{&quot;looknfeel&quot;:&quot;default&quot;,&quot;personalizedMode&quot;:&quot;false&quot;},&quot;info&quot;:{}}</td>
-      </tr>
-</table>
-
-  <div class="BlobToolbar position-absolute js-file-line-actions dropdown js-menu-container js-select-menu d-none" aria-hidden="true">
-    <button class="btn-octicon ml-0 px-2 p-0 bg-white border border-gray-dark rounded-1 dropdown-toggle js-menu-target" id="js-file-line-action-button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Inline file action toolbar" aria-controls="inline-file-actions">
-      <svg aria-hidden="true" class="octicon octicon-kebab-horizontal" height="16" version="1.1" viewBox="0 0 13 16" width="13"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
-    </button>
-    <div class="dropdown-menu-content js-menu-content" id="inline-file-actions">
-      <ul class="BlobToolbar-dropdown dropdown-menu dropdown-menu-se mt-2">
-        <li><a class="js-zeroclipboard dropdown-item" style="cursor:pointer;" id="js-copy-lines" data-original-text="Copy lines">Copy lines</a></li>
-        <li><a class="js-zeroclipboard dropdown-item" id= "js-copy-permalink" style="cursor:pointer;" data-original-text="Copy permalink">Copy permalink</a></li>
-        <li><a href="/wkennedy30/BDHTwitterStreaming/blame/c0dcf996ed0ad76234ef9f3d893b6b45ccbd88a6/final_deliverable/categorize_tweets/CategorizeTweets.json" class="dropdown-item js-update-url-with-hash" id="js-view-git-blame">View git blame</a></li>
-          <li><a href="/wkennedy30/BDHTwitterStreaming/issues/new" class="dropdown-item" id="js-new-issue">Open new issue</a></li>
-      </ul>
-    </div>
-  </div>
-
-  </div>
-
-  </div>
-
-  <button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">Jump to Line</button>
-  <div id="jump-to-line" style="display:none">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-      <input class="form-control linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
-      <button type="submit" class="btn">Go</button>
-</form>  </div>
-
-  </div>
-  <div class="modal-backdrop js-touch-events"></div>
-</div>
-
-    </div>
-  </div>
-
-  </div>
-
-      
-<div class="footer container-lg px-3" role="contentinfo">
-  <div class="position-relative d-flex flex-justify-between py-6 mt-6 f6 text-gray border-top border-gray-light ">
-    <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3">&copy; 2018 <span title="0.09968s from github-gatech-edu-primary">GitHub</span>, Inc.</li>
-        <li class="mr-3"><a href="https://help.github.com/enterprise/2.12">Help</a></li>
-          <li class="mr-3"><a href="mailto:support@oit.gatech.edu">Support</a></li>
-    </ul>
-
-    <a href="https://github.gatech.edu" aria-label="Homepage" class="footer-octicon" title="GitHub Enterprise Version 2.12.8">
-      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-</a>
-    <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3"><a href="https://developer.github.com/enterprise/2.12" data-ga-click="Footer, go to api, text:api">API</a></li>
-      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
-      <li class="mr-3"><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
-        <li class="mr-3"><a href="https://github.com/blog">Blog</a></li>
-        <li><a href="https://github.com/about">About</a></li>
-
-    </ul>
-  </div>
-</div>
-
-
-
-  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
-    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
-    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
-      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
-    </button>
-    You can't perform that action at this time.
-  </div>
-
-
-    
-    <script crossorigin="anonymous" integrity="sha256-F7VsAbjYEuEdAvWDOjCP6snWeqx5tkyuQYm7fPXaSw0=" src="https://github.gatech.edu/assets/frameworks-17b56c01b8d812e11d02f5833a308feac9d67aac79b64cae4189bb7cf5da4b0d.js"></script>
-    
-    <script async="async" crossorigin="anonymous" integrity="sha256-lAkKm+L0JUeKjqwr5uyB8WHeF/LEfaVXb9THcu8NvmE=" src="https://github.gatech.edu/assets/github-94090a9be2f425478a8eac2be6ec81f161de17f2c47da5576fd4c772ef0dbe61.js"></script>
-    
-    
-    
-    
-  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
-    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
-    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
-    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
-  </div>
-  <div class="facebox" id="facebox" style="display:none;">
-  <div class="facebox-popup">
-    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
-    </div>
-    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
-      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
-    </button>
-  </div>
-</div>
-
-
-  </body>
-</html>
-
+{"location":"Florida","timestamp":"Tue Apr 05 02:30:14 +0000 2016","tweetId":717177497872441344,"tweetText":"How can it be that getting the flu was a blessing for Lauren Daigle? https://t.co/GRzSLWKl74 https://t.co/QITQ4zIX0m"}
+{"location":"Texas","timestamp":"Tue Apr 05 03:24:55 +0000 2016","tweetId":717191259375271938,"tweetText":"@camrynlabure @_theresagomez I have the flu so I can't go 🙃 I'll probably get it to bc I've missed a lot oops 🤘🏻"}
+{"location":"Massachusetts","timestamp":"Tue Apr 05 03:51:14 +0000 2016","tweetId":717197882194046976,"tweetText":"RT @EricThurm: I miss the old MJ, Scottie Pippen's bro MJ / the play through flu MJ, hang out with toons MJ / I hate the new MJ, that cryin…"}
+{"location":"Massachusetts","timestamp":"Tue Apr 05 03:51:14 +0000 2016","tweetId":717197882194046976,"tweetText":"RT @EricThurm: I miss the old MJ, Scottie Pippen's bro MJ / the play through flu MJ, hang out with toons MJ / I hate the new MJ, that cryin…"}
+{"location":"Hawaii","timestamp":"Mon Apr 04 00:36:46 +0000 2016","tweetId":716786555168432129,"tweetText":"RT @prince: DESPITE INFLUENZA, THIS PLANET IS PRICELESS! https://t.co/nR4k6Voxvm"}
+{"location":"California","timestamp":"Mon Apr 04 02:31:53 +0000 2016","tweetId":716815525230161920,"tweetText":"15yo has flu. Dog is keeping her company w/a squeaky toy.\n15yo: I've died &amp; gone to hell\nMe: Could be worse. Dog could be toddler\n#BeenThere"}
+{"location":"Florida","timestamp":"Fri Apr 29 02:05:53 +0000 2016","tweetId":725868678772711424,"tweetText":"It was a supposed to be a special trip. I ruined it tho.. caught a Flu &amp; over indulged. the best part of the trip was the ferry ride."}
+{"location":"Oregon","timestamp":"Fri Apr 29 04:36:15 +0000 2016","tweetId":725906519783407618,"tweetText":"I HATE THE FLU!! I JUST WANT TO EAT WITHOUT FEELING LIKE IM GONNA VOMIT!!!"}
+{"location":"Washington","timestamp":"Tue Apr 26 01:01:02 +0000 2016","tweetId":724765195122307072,"tweetText":"RT @SneakerPics23: Flu Game 12's\n\nReleasing May 28th for $190 https://t.co/snpsFBCzoH"}
+{"location":"Texas","timestamp":"Wed Apr 20 00:05:59 +0000 2016","tweetId":722577014159376384,"tweetText":"my parents left me alone, with no food and a sickness that feels like the flu. my night is going well"}
+{"location":"New York","timestamp":"Wed Apr 20 02:09:56 +0000 2016","tweetId":722608207181586432,"tweetText":"Bed ridden with the flu for the last 3 day's has allowed my ample time to myself for some… https://t.co/BUk5osLdaS"}
+{"location":"Wisconsin","timestamp":"Thu Apr 21 16:57:00 +0000 2016","tweetId":723193832704118784,"tweetText":"If it is indeed Prince who has died, I sincerely hope they do an autopsy to find out why he'd been so ill for weeks with \"flu.\""}
+{"location":"California","timestamp":"Thu Apr 21 16:59:41 +0000 2016","tweetId":723194507978625025,"tweetText":"@MarsmanCP damn, I did hear he was ill with the flu."}
+{"location":"Massachusetts","timestamp":"Thu Apr 21 17:09:29 +0000 2016","tweetId":723196974233575424,"tweetText":"@AvrilLavigne Did you hear about Prince?What gives you flu symptoms, affects 300k Americans each year &amp; kills people? #lyme #RIPPrince"}
+{"location":"Florida","timestamp":"Thu Apr 21 17:11:36 +0000 2016","tweetId":723197506918723584,"tweetText":"RT @paulbensonsucks: Prince got got by the flu??? smh can't go out like that"}
+{"location":"Louisiana","timestamp":"Thu Apr 21 17:14:29 +0000 2016","tweetId":723198232524808192,"tweetText":"did he really die cus of the flu damn"}
+{"location":"New York","timestamp":"Thu Apr 21 17:17:15 +0000 2016","tweetId":723198928766832640,"tweetText":"RT @NYDailyNews: Prince was found dead at his studio just days after being hospitalized with the flu https://t.co/2NkOFoD2WM https://t.co/k…"}
+{"location":"Virginia","timestamp":"Thu Apr 21 17:17:38 +0000 2016","tweetId":723199025244155905,"tweetText":"from ....the flu?"}
+{"location":"Minnesota","timestamp":"Thu Apr 21 17:17:47 +0000 2016","tweetId":723199062988615680,"tweetText":"@OldAPG they are saying it is him,I knew he'd been sick,had canceled a couple shows and they said he had the flu then. He'd been out around."}
+{"location":"Florida","timestamp":"Thu Apr 21 17:20:23 +0000 2016","tweetId":723199717283340288,"tweetText":"RT @J_DubbDolo: A flu killed Prince? Don't degrade the legend https://t.co/HVWfNt4rHm"}
+{"location":"California","timestamp":"Thu Apr 21 17:21:10 +0000 2016","tweetId":723199914428108800,"tweetText":"RT @SayCheese_TV: BREAKING: Prince Found Dead At Home At The Age Of 57, battling the Flu\n\nhttps://t.co/9HG6Tp3L5f https://t.co/PCuchA9Lod"}
+{"location":"North Carolina","timestamp":"Thu Apr 21 17:25:01 +0000 2016","tweetId":723200883320713217,"tweetText":"What is going on with the flu? Lost another one #prince after battling the flu??"}
+{"location":"Washington","timestamp":"Thu Apr 21 17:25:37 +0000 2016","tweetId":723201034294820864,"tweetText":"RT @cocosworld: Yes,its true! Prince has passed at 57 of a flu.. I'm in shock! Its like Micheal Jackson dying all over again. Such a true i…"}
+{"location":"California","timestamp":"Thu Apr 21 17:25:48 +0000 2016","tweetId":723201080444612608,"tweetText":"It's going to really suck if it does turn out to be the flu.. considering Prince has been outspoken about rejecting flu shots."}
+{"location":"Michigan","timestamp":"Thu Apr 21 17:27:56 +0000 2016","tweetId":723201617311481856,"tweetText":"RT @KayMich__: What? Just bc you've never heard doesn't mean it hasn't happened. Even the healthiest person can catch the flu.  https://t.c…"}
+{"location":"Texas","timestamp":"Thu Apr 21 17:28:36 +0000 2016","tweetId":723201785100275712,"tweetText":"From the flu wut..."}
+{"location":"South Carolina","timestamp":"Thu Apr 21 17:30:11 +0000 2016","tweetId":723202183538323456,"tweetText":"This is reminisce of #MichaelJackson. I'm in shock that #PurpleRain #Prince is gone. Damn the #flu. https://t.co/0K3K8Q3yUe"}
+{"location":"Georgia","timestamp":"Thu Apr 21 17:35:28 +0000 2016","tweetId":723203513149431808,"tweetText":"RT @London2Fine: How did he die from the flu and \nwe have free flu shots at Walgreens?  https://t.co/bELzGwbLur"}
+{"location":"Georgia","timestamp":"Thu Apr 21 17:39:35 +0000 2016","tweetId":723204549134147584,"tweetText":"Yep bc bae went to it and I remember us talking about him having the flu symptoms the nxt day 😢"}
+{"location":"Washington","timestamp":"Thu Apr 21 17:43:24 +0000 2016","tweetId":723205509633826817,"tweetText":"RT @jmk: Get your flu shot, people."}
+{"location":"California","timestamp":"Thu Apr 21 17:43:30 +0000 2016","tweetId":723205534812229632,"tweetText":"@mizzlizzieo @arociorl @Leemitage @eligwy77 Did you know the Prince the musician, he died today at age 57, had flu😱 https://t.co/BLlnheyZSt"}
+{"location":"Texas","timestamp":"Thu Apr 21 17:44:33 +0000 2016","tweetId":723205799044997120,"tweetText":"\"the flu\" https://t.co/sn9FyyJfvZ"}
+{"location":"New York","timestamp":"Thu Apr 21 17:45:10 +0000 2016","tweetId":723205954242777089,"tweetText":"@mustloverell the flu tho 😑"}
+{"location":"Tennessee","timestamp":"Thu Apr 21 17:45:12 +0000 2016","tweetId":723205962610429952,"tweetText":"The flu ?!? 😑 man cut that shit"}
+{"location":"California","timestamp":"Thu Apr 21 17:47:35 +0000 2016","tweetId":723206562404139012,"tweetText":"@NthPwr it was the flu"}
+{"location":"Tennessee","timestamp":"Thu Apr 21 17:48:33 +0000 2016","tweetId":723206805661188097,"tweetText":"RT @BarstoolChief: All of that drinking, drugs and fucking in the 80s and Prince died from the FLU?! The flu?! What?!"}
+{"location":"California","timestamp":"Thu Apr 21 17:50:11 +0000 2016","tweetId":723207216723988481,"tweetText":"@NthPwr @RYYDEAUX flu can also lead to pneumonia so never know mayne"}
+{"location":"Texas","timestamp":"Thu Apr 21 17:52:03 +0000 2016","tweetId":723207686486167552,"tweetText":"Did the Chemtrail Flu Kill Prince and Merle Haggard? - https://t.co/A5p179P7AK https://t.co/zFhh3v9yDq"}
+{"location":"Texas","timestamp":"Thu Apr 21 17:54:06 +0000 2016","tweetId":723208202356035587,"tweetText":"Prince died of flu or overdose?? #aintnotelling"}
+{"location":"Indiana","timestamp":"Thu Apr 21 17:55:51 +0000 2016","tweetId":723208642783109121,"tweetText":"Some are saying Prince may have died from the flu. There were probably unforeseen complications w Flu #GoneTooSoon #PurpleTears #RIPPrince"}
+{"location":"Delaware","timestamp":"Thu Apr 21 17:58:29 +0000 2016","tweetId":723209305458089984,"tweetText":"RT @flueternoamor: Globo @ge_flu - Após título, Lino cita importância de Flu mostrar que pode \"viver\" sem Fred https://t.co/KndMTDL5hz #Flu…"}
+{"location":"Illinois","timestamp":"Thu Apr 21 17:58:48 +0000 2016","tweetId":723209385183449093,"tweetText":"If he died from flu then he had to have sumn else prior to break down his immune system so this fishy https://t.co/XTPcaOJfeY"}
+{"location":"New Jersey","timestamp":"Thu Apr 21 18:00:05 +0000 2016","tweetId":723209708111310848,"tweetText":"RT @iPhillyChitChat: Brittany Murphy Battled Flu-Like Symptoms Before Death https://t.co/5547tBrK3N via @People"}
+{"location":"New York","timestamp":"Thu Apr 21 18:01:07 +0000 2016","tweetId":723209968162377728,"tweetText":"@rqui may he RIP. Gone way too soon. Wonder if it's was more than the flu."}
+{"location":"California","timestamp":"Thu Apr 21 18:02:00 +0000 2016","tweetId":723210190481285120,"tweetText":"RT @NicolePence: #Prince cancelled a concert in April - told @TMZ he had the flu. Played concerts after. #Prince was 57 @CBSSports  https:/…"}
+{"location":"Ohio","timestamp":"Thu Apr 21 18:03:35 +0000 2016","tweetId":723210588919336961,"tweetText":"I agree, There must be other underlying issues. A seasonal flu doesnt kill you unless there are comorbidities. https://t.co/p9lpyVkQRE"}
+{"location":"Pennsylvania","timestamp":"Thu Apr 21 18:06:52 +0000 2016","tweetId":723211415201406976,"tweetText":"@UGOTDATT Who dies from the flu? Weak immune system? Early 50s? It's not adding up."}
+{"location":"Wisconsin","timestamp":"Thu Apr 21 18:09:56 +0000 2016","tweetId":723212186965811200,"tweetText":"RT @infowars: Did the Chemtrail Flu Kill Prince and Merle Haggard? - https://t.co/AHthyv888m https://t.co/AYYc4BouPC"}
+{"location":"Michigan","timestamp":"Thu Apr 21 18:10:02 +0000 2016","tweetId":723212212135825409,"tweetText":"@PercocetChamp my best friend died from the flu too. basically a 1 in a million chance"}
+{"location":"Texas","timestamp":"Thu Apr 21 18:17:02 +0000 2016","tweetId":723213973735280640,"tweetText":"The flu not supposed to take u out that early https://t.co/lfvwpwHBKD"}
+{"location":"Massachusetts","timestamp":"Thu Apr 21 18:24:50 +0000 2016","tweetId":723215936661102592,"tweetText":"@PunkiGray Or maybe I am the flu..."}
+{"location":"California","timestamp":"Thu Apr 21 18:33:57 +0000 2016","tweetId":723218230974668800,"tweetText":"RT @NewsBreaksLive: Did the #Chemtrail #Flu #Kill Prince and Merle Haggard? https://t.co/3yGH5g9bwQ"}
+{"location":"Maryland","timestamp":"Thu Apr 21 18:39:15 +0000 2016","tweetId":723219564759126016,"tweetText":"UK death rate rise blamed on increase in people suffering from flu and dementia: https://t.co/2pK6NpNGjG"}
+{"location":"New York","timestamp":"Thu Apr 21 18:46:14 +0000 2016","tweetId":723221322164219905,"tweetText":"RT @ImTheBombDotCom: Y'all believe this rich ass man died from a flu? https://t.co/mCR2KP3V7w"}
+{"location":"Florida","timestamp":"Thu Apr 21 18:56:04 +0000 2016","tweetId":723223796791029760,"tweetText":"Prince dies from the flu?!?! Why didn't someone give him some Robitussin? Wtf is this, the Oregon Trail I mean damn"}
+{"location":"Tennessee","timestamp":"Thu Apr 21 18:56:48 +0000 2016","tweetId":723223981332017152,"tweetText":"Prince dead from the flu but Morgan Freeman survive full on plane crashes.."}
+{"location":"Texas","timestamp":"Thu Apr 21 19:00:21 +0000 2016","tweetId":723224874752200704,"tweetText":"RT @DickGraceless: How can #Prince die of flu? How? He's supposed to die in a sex apocalypse while playing nine instruments and composing a…"}
+{"location":"Maryland","timestamp":"Thu Apr 21 19:08:30 +0000 2016","tweetId":723226925741838337,"tweetText":"So did he died just from the flu or was it something else ?! 🤔"}
+{"location":"California","timestamp":"Thu Apr 21 19:18:44 +0000 2016","tweetId":723229501052751872,"tweetText":"Get your shots: \"in the United States alone, 36,000 people die and more than 200,000 are hospitalized each year because of the flu\""}
+{"location":"Arizona","timestamp":"Thu Apr 21 20:02:26 +0000 2016","tweetId":723240498509434880,"tweetText":"RT @leeflower: Heard immunity is no joke. Flu strains need healthy, resilient bodies in which to mutate and overcome healthy defenses."}
+{"location":"California","timestamp":"Thu Apr 21 20:04:32 +0000 2016","tweetId":723241026991849472,"tweetText":"RT @NigeriaNewsdesk: Legendary singer Prince reportedly dies from Flu, aged 57 https://t.co/cZKzfnc54q via @radarngr https://t.co/56KFHW63AU"}
+{"location":"Tennessee","timestamp":"Thu Apr 28 22:29:56 +0000 2016","tweetId":725814333171765248,"tweetText":"I'm blaming the flu on this... 🤒\n⚡️ “Gird your loins, Mercury is in retrograde”\n\nhttps://t.co/oHn8pP8G2K"}
+{"location":"Florida","timestamp":"Thu Apr 28 23:01:31 +0000 2016","tweetId":725822281373605888,"tweetText":"RT @trib_queen: Caught the flu. I need soup, dick and affection 😟"}
+{"location":"California","timestamp":"Fri Apr 29 01:15:12 +0000 2016","tweetId":725855923885867008,"tweetText":"@torta765 Ganbatte! Hope it goes well today and that you're fully recovered from your stomach flu."}
+{"location":"Arizona","timestamp":"Fri Apr 29 01:34:07 +0000 2016","tweetId":725860684412542977,"tweetText":"@brownieelfdr @ananavarro Exactly that kind of flu! Too late for an antiviral to work."}
+{"location":"Tennessee","timestamp":"Wed Apr 06 01:21:44 +0000 2016","tweetId":717522647123431424,"tweetText":"In bed all day with a terrible case of the Flu omg!  If you've had… https://t.co/dHJ38yfTPt"}
+{"location":"Arizona","timestamp":"Wed Apr 06 02:01:17 +0000 2016","tweetId":717532600219340801,"tweetText":"Enjoyed talking #flu with Lauren Grifo @KTAR923 today. Flu still widespread and circulating in AZ. https://t.co/7LSsAe66AT"}
+{"location":"Washington","timestamp":"Wed Apr 27 02:40:36 +0000 2016","tweetId":725152639755898880,"tweetText":"Article by an ND  colleague on the flu shot for kids. Yes, it's pro-vax. Get your science on. https://t.co/72DADpqLkd"}
+{"location":"California","timestamp":"Wed Apr 27 03:33:33 +0000 2016","tweetId":725165965076373504,"tweetText":"RT @John_Cioch: One Flu Over the Cuckoo's Nest \n#MakeAMovieSick @midnight"}
+{"location":"Texas","timestamp":"Wed Apr 27 03:48:35 +0000 2016","tweetId":725169748334399488,"tweetText":"Devil In A Flu Dress... That's a dress covered in vomit, fyi. #MakeAMovieSick @midnight"}
+{"location":"Louisiana","timestamp":"Wed Apr 27 03:59:56 +0000 2016","tweetId":725172604667990016,"tweetText":"RT @charley_ck14: 10 Things I Hate About Flu #MakeAMovieSick @midnight"}
+{"location":"California","timestamp":"Wed Apr 27 04:16:16 +0000 2016","tweetId":725176715060748288,"tweetText":"Is u sick from the dick or is it the flu"}
+{"location":"California","timestamp":"Wed Apr 27 04:22:45 +0000 2016","tweetId":725178346636644352,"tweetText":"#MakeAMovieSick  Kung Flu Panda.  @midnight"}
+{"location":"Mississippi","timestamp":"Tue Apr 12 00:03:40 +0000 2016","tweetId":719677328213876736,"tweetText":"RT @msstate: From pandemic flu to global food security, MSU is leading research that is making a global impact. #StateProud https://t.co/jz…"}
+{"location":"Arizona","timestamp":"Tue Apr 12 00:19:41 +0000 2016","tweetId":719681358944083968,"tweetText":"RT @reddpups: Stop @USDA from baking live birds to death! Ask them to prohibit ventilation shutdown for killing bird flu victims: https://t…"}
+{"location":"Florida","timestamp":"Tue Apr 12 00:33:37 +0000 2016","tweetId":719684865386528768,"tweetText":"sweating like I got a fever, jewelry be the flu boy."}
+{"location":"Missouri","timestamp":"Tue Apr 12 00:35:32 +0000 2016","tweetId":719685347710349313,"tweetText":"Flu season? You need an ID at the pharmacy. #VoterID #moleg https://t.co/cBTHQpX1cC"}
+{"location":"California","timestamp":"Tue Apr 12 00:53:18 +0000 2016","tweetId":719689818851164161,"tweetText":"Lomatium Root is found in both the Kiona's Farm'acy brand Sinus Infection and Cold &amp; Flu herbal blends.... https://t.co/MjwHzgMXMG"}
+{"location":"Indiana","timestamp":"Tue Apr 12 01:55:51 +0000 2016","tweetId":719705560065572864,"tweetText":"I'm so tired from this awful flu that I'm going to bed now to get up early and not sleep forever until this paper is done 😭😭. #prayforme"}
+{"location":"Florida","timestamp":"Tue Apr 12 02:00:53 +0000 2016","tweetId":719706826741129217,"tweetText":"@10MinDQ @SamHeughan @MyPeakChallenge \nWow that's a lot of days! \n96 days for me\nExcept missed days when I had flu"}
+{"location":"New York","timestamp":"Thu Apr 14 00:52:35 +0000 2016","tweetId":720414414218735616,"tweetText":"my flu turned into a cold :):) im never going to be able to breathe again :):)"}
+{"location":"California","timestamp":"Thu Apr 14 00:56:52 +0000 2016","tweetId":720415492180029440,"tweetText":"Lose 5 lbs the fun way by getting the flu."}
+{"location":"Washington","timestamp":"Thu Apr 14 01:37:53 +0000 2016","tweetId":720425814353780736,"tweetText":"The #nats medical quacks  could see his arm fall off and declare him day-to-day with influenza https://t.co/OK58zpIQAS"}
+{"location":"Texas","timestamp":"Thu Apr 14 02:54:39 +0000 2016","tweetId":720445133297184768,"tweetText":"Send your love and well wishes to my gf @Ohh_Soo_Rawrr please, she has come down with the #flu. Thank you."}
+{"location":"Colorado","timestamp":"Thu Apr 14 03:50:30 +0000 2016","tweetId":720459188443422720,"tweetText":"RT @brisbanetimes: Flu vaccine: Queensland home to almost half the country's flu cases\nhttps://t.co/yqmyKzjOvZ https://t.co/pB5jS6x3Fw"}
+{"location":"Washington","timestamp":"Fri Apr 15 01:24:13 +0000 2016","tweetId":720784762885963776,"tweetText":"@TrillDealJenn you got the flu?"}
+{"location":"Massachusetts","timestamp":"Fri Apr 15 01:33:34 +0000 2016","tweetId":720787115882229761,"tweetText":"How u come on the bus to New York with the stomach flu😭😭😭"}
+{"location":"Illinois","timestamp":"Wed Apr 13 00:56:24 +0000 2016","tweetId":720052986861387778,"tweetText":"RT @FaZeBlaziken: Damn the flu is hitting me hard today. Not sure if i'm gonna upload :/"}
+{"location":"Indiana","timestamp":"Wed Apr 13 01:07:57 +0000 2016","tweetId":720055893514186752,"tweetText":"I've had a cough for three weeks now. Do I have strep? Mono? Bird flu? Do I even exist? What is time?"}
+{"location":"Minnesota","timestamp":"Wed Apr 13 01:38:25 +0000 2016","tweetId":720063560693497856,"tweetText":"RT @kicksonfire: Air Jordan 12 Flu Game (2016) - https://t.co/gVJZXApNMm https://t.co/ktyFGQTdNP"}
+{"location":"Indiana","timestamp":"Wed Apr 13 01:38:52 +0000 2016","tweetId":720063673956495360,"tweetText":"RT @kicksonfire: Air Jordan 12 Flu Game (2016) - https://t.co/gVJZXApNMm https://t.co/ktyFGQTdNP"}
+{"location":"New York","timestamp":"Wed Apr 13 01:43:46 +0000 2016","tweetId":720064907073478656,"tweetText":"I'm at the hospital and there's a bunch of people here with the flu fuckkkkk that I'm about to zayn 😂"}
+{"location":"Delaware","timestamp":"Wed Apr 13 01:51:33 +0000 2016","tweetId":720066865830211588,"tweetText":"@helena_flu to ouvindo a radio tupi leninha,obrigado"}
+{"location":"Louisiana","timestamp":"Thu Apr 21 23:31:29 +0000 2016","tweetId":723293107681267712,"tweetText":"Prince didn't die of the flu🤔 I just don't believe it."}
+{"location":"Georgia","timestamp":"Fri Apr 22 00:00:42 +0000 2016","tweetId":723300460287823875,"tweetText":"the flu killed my mile time at regional and now i'm done for the year :(((( plus ima have to make up my slos when i get back :("}
+{"location":"Florida","timestamp":"Fri Apr 22 00:01:34 +0000 2016","tweetId":723300678391746560,"tweetText":"Every time I hear \"flu like symptoms\" from millionaires I think AIDS"}
+{"location":"Massachusetts","timestamp":"Fri Apr 22 00:05:40 +0000 2016","tweetId":723301710182096896,"tweetText":"RT @ERgnome: Health nut rockstar dies young of the flu and not a drug overdose. That's big news\n#Prince #RIPPrince"}
+{"location":"Alabama","timestamp":"Fri Apr 22 00:14:31 +0000 2016","tweetId":723303937382576129,"tweetText":"@megynkelly @TMZ @HarveyLevinTMZ was also fighting the flu"}
+{"location":"California","timestamp":"Fri Apr 22 00:23:58 +0000 2016","tweetId":723306315523608576,"tweetText":"Knew the flu seemed unlikely. Sad to see another music icon leave early  https://t.co/Bcnxh9aOSE"}
+{"location":"California","timestamp":"Fri Apr 22 00:37:08 +0000 2016","tweetId":723309629053145089,"tweetText":"@homerfanAGE @Swainify also them saying he had the flu for weeks seems like maybe misdiagnosed?  He had a show last week and sang with flu?"}
+{"location":"Oklahoma","timestamp":"Fri Apr 22 01:04:11 +0000 2016","tweetId":723316436391710720,"tweetText":"Somebody on fb said they baby daddy just got over the flu and why Prince had to die instead of him. X___X"}
+{"location":"Connecticut","timestamp":"Fri Apr 22 01:09:15 +0000 2016","tweetId":723317711451918336,"tweetText":"RT @pzf: BREAKING: TMZ's Harvey Levin:  “I don't believe the flu story at all … we are hearing something very different\"  https://t.co/AsNz…"}
+{"location":"Georgia","timestamp":"Fri Apr 22 01:20:20 +0000 2016","tweetId":723320500676628485,"tweetText":"RT @Parislamane: Yea. Ok. He had \"flu like symptoms\" https://t.co/qdvTqItPaN"}
+{"location":"North Carolina","timestamp":"Fri Apr 22 01:39:38 +0000 2016","tweetId":723325357659660288,"tweetText":"@megynkelly @DrMarcSiegel I tested positive for the flu. Everybody is different."}
+{"location":"Texas","timestamp":"Fri Apr 22 01:58:55 +0000 2016","tweetId":723330210481889281,"tweetText":"@herbert_stephan @calimay82 Supposedly there's photos of him being outside a Walgreens last night why someone went inside.Flu possibly"}
+{"location":"North Carolina","timestamp":"Fri Apr 22 02:23:23 +0000 2016","tweetId":723336367707709440,"tweetText":"The nigga ain't die over no flu symptom that's complete BS put two and two together"}
+{"location":"Illinois","timestamp":"Mon Apr 25 00:35:50 +0000 2016","tweetId":724396465485942786,"tweetText":"flu compared to possible ligament damage... bro what? https://t.co/HbG9wTOEzh"}
+{"location":"California","timestamp":"Mon Apr 25 02:34:01 +0000 2016","tweetId":724426207274500096,"tweetText":"@JerryMarkon having the flu and having a sprained knee are not even close to being comparable, just stop."}
+{"location":"Pennsylvania","timestamp":"Mon Apr 18 23:55:43 +0000 2016","tweetId":722212042606833664,"tweetText":"@Jaime_Moyer The Spy who Came in from the Flu"}
+{"location":"Arizona","timestamp":"Tue Apr 19 00:14:18 +0000 2016","tweetId":722216719234695168,"tweetText":"196 to 188lbs thx stomach flu 😒"}
+{"location":"New York","timestamp":"Tue Apr 19 00:37:48 +0000 2016","tweetId":722222633199149056,"tweetText":"RT @UnrevealedTips: Pineapple juice is 5 times more effective than cough syrup. It also prevents colds and the flu."}
+{"location":"California","timestamp":"Tue Apr 19 01:44:59 +0000 2016","tweetId":722239540451127296,"tweetText":"Committing suicide to cure a flu. Man, that is good copy. [No sarcasm]"}
+{"location":"Arizona","timestamp":"Tue Apr 19 02:04:47 +0000 2016","tweetId":722244523288502272,"tweetText":"RT @NolfWigger: @JSII_19 FLU👆🏾"}
+{"location":"Illinois","timestamp":"Thu Apr 28 02:53:22 +0000 2016","tweetId":725518240449855488,"tweetText":"@AndrewCieslak @TheBlogfines @e3laroche AKA \"Oh shit maybe this itch is the flu, sorry boss gotta stay home\" day"}
+{"location":"Georgia","timestamp":"Thu Apr 28 03:00:25 +0000 2016","tweetId":725520014653140992,"tweetText":"Kobe 81 or Jordan flu game  https://t.co/WcRxCU1mSp"}
+{"location":"Missouri","timestamp":"Thu Apr 28 03:02:52 +0000 2016","tweetId":725520631240912896,"tweetText":"@SeanTPendergast essentially his job is to play D and hit 3's. He's been horrendous on both ends...it's like a really bad stomach flu lol"}
+{"location":"Arizona","timestamp":"Thu Apr 28 03:31:54 +0000 2016","tweetId":725527937689128960,"tweetText":"Many Americans Still Leery of Swine Flu Vaccine https://t.co/VdsaK1JLyF"}
+{"location":"Virginia","timestamp":"Thu Apr 07 01:36:37 +0000 2016","tweetId":717888780523409409,"tweetText":"@TheQueenHEEL caught that Mania flu"}
+{"location":"California","timestamp":"Thu Apr 07 03:41:56 +0000 2016","tweetId":717920317482532864,"tweetText":"RT @Iamzombiedad: At doctors.\nDid not think #zombies could get sick.\nHope it\"s not zombie flu.\nT bat's a thousand times worse than man fli."}
+{"location":"California","timestamp":"Tue Apr 26 22:03:27 +0000 2016","tweetId":725082892674674688,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"New Jersey","timestamp":"Sun Apr 10 23:46:24 +0000 2016","tweetId":719310595040886785,"tweetText":"@AlienToYou ok. Not 100% sure, but I think Thimerosal is only in flu vaccines(since 2001), and there are non-Thimerosal alternatives."}
+{"location":"Indiana","timestamp":"Mon Apr 11 00:44:28 +0000 2016","tweetId":719325208000245762,"tweetText":"RT @DoentesPFutebol: Foco no torcedor do Flu\nhttps://t.co/wnv6voAlsq"}
+{"location":"Utah","timestamp":"Mon Apr 11 00:53:06 +0000 2016","tweetId":719327380662198272,"tweetText":"Protein Sciences, UNIGEN agree to supply Flublok influenza... https://t.co/baDpGh7jTN #Influenza"}
+{"location":"Delaware","timestamp":"Mon Apr 11 01:03:53 +0000 2016","tweetId":719330094385401857,"tweetText":"RT @thelonelyisland: In full Fresh Prince mode. Kiv has the flu 🌡 his face in this pic is a lie. #MTVmovieawards https://t.co/rxMyi5Kyyb"}
+{"location":"Michigan","timestamp":"Mon Apr 11 01:14:47 +0000 2016","tweetId":719332837464346626,"tweetText":"RT @thelonelyisland: In full Fresh Prince mode. Kiv has the flu 🌡 his face in this pic is a lie. #MTVmovieawards https://t.co/rxMyi5Kyyb"}
+{"location":"Florida","timestamp":"Wed Apr 20 23:49:29 +0000 2016","tweetId":722935249638920192,"tweetText":"An overwhelming Flu majority in Juiz de Fora (MG) awaits the final of Fluminense x Atlético Paranaense for the South-Rio-Minas Cup."}
+{"location":"Arkansas","timestamp":"Thu Apr 21 01:16:59 +0000 2016","tweetId":722957269764202496,"tweetText":"@_SallyannP Hey, Sallyann!  How are you girlfriend? I have the flu...again! 😬"}
+{"location":"South Carolina","timestamp":"Thu Apr 21 01:29:02 +0000 2016","tweetId":722960302212538372,"tweetText":"@leandro_vidal e o tal do Marlone fazendo gol pro Corinthians! Não jogava nada no Flu!"}
+{"location":"Maryland","timestamp":"Thu Apr 21 02:42:17 +0000 2016","tweetId":722978736199618560,"tweetText":"I'm dying. This flu is getting the best of me"}
+{"location":"Massachusetts","timestamp":"Wed Apr 20 17:09:16 +0000 2016","tweetId":722834531821232128,"tweetText":"@classy_dame Y2K! Bird flu! The encroachment of communism in Central America!"}
+{"location":"Tennessee","timestamp":"Wed Apr 20 18:40:30 +0000 2016","tweetId":722857491457974272,"tweetText":"Could Flu Vaccines be Aiming at the Wrong Target? https://t.co/zMMy1yH4Ub"}
+{"location":"California","timestamp":"Wed Apr 27 18:53:19 +0000 2016","tweetId":725397431932837888,"tweetText":"Wearing my favourite #outfit at #work because I've got the #flu https://t.co/Hb0yheRrF6"}
+{"location":"Ohio","timestamp":"Wed Apr 27 19:16:03 +0000 2016","tweetId":725403152980303872,"tweetText":"Them gym red 12s look way better than the flu games."}
+{"location":"California","timestamp":"Wed Apr 27 19:17:35 +0000 2016","tweetId":725403538831073281,"tweetText":"RT @MamasHealth: How Not to Catch the H1N1 Flu Bug - #NourishYourBody https://t.co/ac5kceK5Sv"}
+{"location":"Rhode Island","timestamp":"Wed Apr 27 20:11:03 +0000 2016","tweetId":725416994175111170,"tweetText":"The Air Jordan 12 Hydro Slide \"Flu Game\" dropped via @Finishline -&gt; https://t.co/2vfFHxuj0g https://t.co/BvkaAjl24K"}
+{"location":"Florida","timestamp":"Wed Apr 27 20:56:18 +0000 2016","tweetId":725428381710319617,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"California","timestamp":"Wed Apr 27 23:54:39 +0000 2016","tweetId":725473264932294656,"tweetText":"MJ flu game  https://t.co/CDfgkac3JK"}
+{"location":"North Carolina","timestamp":"Fri Apr 08 00:04:55 +0000 2016","tweetId":718228091324260352,"tweetText":"Agree with Dr. Seibert's answer to \"If a person is exposed to flu virus, can he drink prune juice and eat beans to \"f...\" - http://htap.u..."}
+{"location":"California","timestamp":"Wed Apr 27 15:19:08 +0000 2016","tweetId":725343530919534593,"tweetText":"81 or Flu Game https://t.co/JfvzQMKCph"}
+{"location":"Texas","timestamp":"Wed Apr 27 15:46:23 +0000 2016","tweetId":725350388602310656,"tweetText":"2009: Fever Ray, The avalanches y la influenza."}
+{"location":"Hawaii","timestamp":"Wed Apr 27 15:50:16 +0000 2016","tweetId":725351365879308289,"tweetText":"@EdiTh_G_15 oh no! I hope it's not the flu! 😭 I hope you feel better soon gmama💖❤️😘"}
+{"location":"Virginia","timestamp":"Wed Apr 27 16:26:40 +0000 2016","tweetId":725360526243565569,"tweetText":"Flu game wasn't the flu game, Jordan was drunk or had food poisoning so I gotta say Kobe's 82 https://t.co/FtPoTtcFJS"}
+{"location":"Massachusetts","timestamp":"Wed Apr 27 17:00:30 +0000 2016","tweetId":725369040684912640,"tweetText":"Top 5 Symptoms of the 24-Hour Flu - https://t.co/gsOWhfXO9C\n\n#Flu #Nausea @DrHealthPress https://t.co/8LLNsSrllV"}
+{"location":"California","timestamp":"Thu Apr 07 00:46:28 +0000 2016","tweetId":717876159862558720,"tweetText":"@DylanTWM I'm back home now with the flu..."}
+{"location":"Indiana","timestamp":"Mon Apr 04 21:18:53 +0000 2016","tweetId":717099144075055104,"tweetText":"RT @MinorityHealth: Thanks to #ACA, preventive services like mammograms and flu shots are free. #NMHM16 https://t.co/sF4O0Vopg1"}
+{"location":"Washington","timestamp":"Mon Apr 04 23:40:43 +0000 2016","tweetId":717134837606440965,"tweetText":"‘Perfect storm’ of factors made 2014-15 flu shot a bust, but atypical: study https://t.co/BMJ4dIECsQ"}
+{"location":"Virginia","timestamp":"Tue Apr 26 15:07:16 +0000 2016","tweetId":724978156705185792,"tweetText":"Never Get A Cold Again: Discover the system that enables you to never ever get a cold or the flu again. https://t.co/mXPy2GjjiL"}
+{"location":"Colorado","timestamp":"Tue Apr 26 16:19:44 +0000 2016","tweetId":724996393555746817,"tweetText":"RT @NVICLoeDown: \"Flu Vaccine Causes 5.5 Times More Respiratory Infections\" – A True Vaccinated vs. Unvaccinated Study  https://t.co/SVhywP…"}
+{"location":"Alabama","timestamp":"Tue Apr 26 16:29:22 +0000 2016","tweetId":724998817850994689,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Florida","timestamp":"Tue Apr 26 17:00:25 +0000 2016","tweetId":725006631864438784,"tweetText":"Iraq reports first outbreaks of bird flu in 10 years https://t.co/HkyOkMdnDl"}
+{"location":"Indiana","timestamp":"Tue Apr 26 17:27:02 +0000 2016","tweetId":725013330167996416,"tweetText":"RT @spcoggins: So important! #flu shot | #vaccination | #pregnancy https://t.co/bewhf4vNmm"}
+{"location":"New York","timestamp":"Tue Apr 26 17:53:13 +0000 2016","tweetId":725019919423791104,"tweetText":"@vivvdikk should've had your flu shot"}
+{"location":"Connecticut","timestamp":"Thu Apr 28 15:51:27 +0000 2016","tweetId":725714051536441345,"tweetText":"RT @engrossingfacts: Depressed people get colds more frequently -- Energetic, happy and relaxed individuals are immune to cold and flu."}
+{"location":"Colorado","timestamp":"Thu Apr 28 16:15:49 +0000 2016","tweetId":725720183625551872,"tweetText":"The flu... what a jerk https://t.co/UKB0sr5Qe9"}
+{"location":"Louisiana","timestamp":"Thu Apr 28 16:36:40 +0000 2016","tweetId":725725430699970560,"tweetText":"I have the flu and my mom is ignoring all of my calls and texts #help"}
+{"location":"Montana","timestamp":"Thu Apr 28 17:06:46 +0000 2016","tweetId":725733005592039424,"tweetText":"Araguaia Notícia :: Em Barra do Garças campanha de Vacinação contra influenza começa dia 30 de abril https://t.co/zuvVGtn5Dr"}
+{"location":"Florida","timestamp":"Fri Apr 08 02:17:54 +0000 2016","tweetId":718261557675868160,"tweetText":"@YaamTheMan @Snow_Flu 😂😂 lol we arent that corny just chill ❤️ its all love"}
+{"location":"Connecticut","timestamp":"Fri Apr 08 02:37:55 +0000 2016","tweetId":718266595030798338,"tweetText":"Can't let a little influenza break my perfect attendance at Bar on Thursday nights this senior year"}
+{"location":"New York","timestamp":"Wed Apr 13 18:41:31 +0000 2016","tweetId":720321032238850048,"tweetText":"RT @NIH: A5: For decades, #Zika was mainly seen in equatorial regions of Africa &amp; Asia, where it caused a mild, flu-like illness #ReutersZi…"}
+{"location":"South Carolina","timestamp":"Fri Apr 01 17:04:28 +0000 2016","tweetId":715947954423656449,"tweetText":"@SynergyRzq you got the flu?"}
+{"location":"Alaska","timestamp":"Fri Apr 01 18:08:37 +0000 2016","tweetId":715964098312323076,"tweetText":"@Exavolt_ the flu does suck ;-; feel better"}
+{"location":"Florida","timestamp":"Fri Apr 01 19:33:02 +0000 2016","tweetId":715985342445301761,"tweetText":"Flu Shot During Pregnancy May Cut Stillbirth Risk by Half (CME/CE) #OBGYN https://t.co/luMMe5ZTBD"}
+{"location":"Colorado","timestamp":"Mon Apr 25 21:37:59 +0000 2016","tweetId":724714095912480768,"tweetText":"RT @ballskwok: Poor guy. Has the flu and is being attacked by tigers.  https://t.co/b3RHBoQHSk"}
+{"location":"Mississippi","timestamp":"Mon Apr 25 22:22:29 +0000 2016","tweetId":724725294716858369,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Missouri","timestamp":"Mon Apr 25 22:33:42 +0000 2016","tweetId":724728117487669249,"tweetText":"https://t.co/ey49TWu693 2016 Nike Air Jordan Retro 12 \"flu Game\" DS Sz 10 100% Authentic    Ships Now !"}
+{"location":"New York","timestamp":"Mon Apr 25 23:31:09 +0000 2016","tweetId":724742575266127874,"tweetText":"Nike air jordan xii sz 8.5y ds vivid pink master flu game valentines 12 xi xiii - Bid Now!… https://t.co/cvyykgVyE8 https://t.co/cWIeWISrRU"}
+{"location":"Texas","timestamp":"Tue Apr 26 00:34:50 +0000 2016","tweetId":724758601676419072,"tweetText":"RT @moonlightbaby: Having a chronic illness is like having a flu that never entirely goes. Some days you're stronger, others you can barely…"}
+{"location":"Georgia","timestamp":"Thu Apr 21 20:11:28 +0000 2016","tweetId":723242771813916672,"tweetText":"Did flu kill pop superstar Prince? https://t.co/iKdQrznohK"}
+{"location":"Texas","timestamp":"Thu Apr 21 20:12:51 +0000 2016","tweetId":723243119936839680,"tweetText":"RT @bantuthot: So...who gave prince the flu? I just wanna talk."}
+{"location":"Nevada","timestamp":"Thu Apr 21 20:16:17 +0000 2016","tweetId":723243984001241088,"tweetText":"LRTs: I learned my lesson in February, when I had the worst flu I've ever had. I actually downplayed it on Twitter, but it was BAD."}
+{"location":"South Carolina","timestamp":"Thu Apr 21 20:38:25 +0000 2016","tweetId":723249554024480768,"tweetText":"RT @RoseCovington: Feel like I got the flu but my temperature's pretty normal... I can't get sick right now, I got too much school stuff go…"}
+{"location":"Washington","timestamp":"Thu Apr 21 20:44:23 +0000 2016","tweetId":723251055585165312,"tweetText":"RT @infowars: Did the Chemtrail Flu Kill Prince and Merle Haggard? - https://t.co/AHthyv888m https://t.co/AYYc4BouPC"}
+{"location":"New Jersey","timestamp":"Thu Apr 21 20:49:36 +0000 2016","tweetId":723252368381489154,"tweetText":"RT @ScienceDaily: Why Flu Is Worse in the Elderly https://t.co/rlLjudeBkS https://t.co/669GN3cChS"}
+{"location":"California","timestamp":"Thu Apr 21 20:54:03 +0000 2016","tweetId":723253488260542464,"tweetText":"He tasted the tears of one too many doves. The bird flu has him now. #RIPPrince"}
+{"location":"Louisiana","timestamp":"Thu Apr 21 20:55:03 +0000 2016","tweetId":723253739944042496,"tweetText":"Could Flu Have Caused Prince's Death? Yes. Here's Why https://t.co/TYiRKUch5h #forbes https://t.co/UpAbKwEMBO"}
+{"location":"Texas","timestamp":"Thu Apr 21 21:03:59 +0000 2016","tweetId":723255988090900480,"tweetText":"RT @Kendall_Collier: Shoutout to @kkroecker13 for comin in clutch and bringing me all of this while I have the flu https://t.co/mAHdbUwi02"}
+{"location":"Vermont","timestamp":"Thu Apr 21 21:16:51 +0000 2016","tweetId":723259226076909568,"tweetText":"Express going with office wanker air quotes around the word Flu https://t.co/XCO37v6SMq"}
+{"location":"California","timestamp":"Thu Apr 21 21:21:38 +0000 2016","tweetId":723260429833633792,"tweetText":"RT @lawaghorn: Friends in #PublicHealth it is officially #TooSoon to use Prince's death to further flu shot messaging. Stop. Wait you soon"}
+{"location":"Texas","timestamp":"Thu Apr 21 21:29:47 +0000 2016","tweetId":723262480877658112,"tweetText":"@JerryRoark @prince I know! 😢 and it looks like he may have died of flu"}
+{"location":"Washington","timestamp":"Thu Apr 21 21:39:42 +0000 2016","tweetId":723264976463515648,"tweetText":"@WashingTina Well, you're allowed to be. Hope you get rid of the flu and the heart thing and get home safely."}
+{"location":"Texas","timestamp":"Thu Apr 21 21:41:18 +0000 2016","tweetId":723265379133321216,"tweetText":"@inspiredbyria_ @MrPryority flu can turn to pneumonia if left untreated... In anyone..."}
+{"location":"Ohio","timestamp":"Thu Apr 21 21:43:49 +0000 2016","tweetId":723266012477530112,"tweetText":"There may have been something wrong with the airplane Prince was flying on which caused \"flu like symptoms\" code words.\nMust locate others."}
+{"location":"Illinois","timestamp":"Thu Apr 21 21:43:52 +0000 2016","tweetId":723266025051951104,"tweetText":"Aids doesn't kill ... Flu does ... Do the math 🙃🙃🙃 https://t.co/LBNlvvab4T"}
+{"location":"New York","timestamp":"Thu Apr 21 21:44:57 +0000 2016","tweetId":723266297669230592,"tweetText":"The flu could wipe out all the kids &amp; an adult or two in a household if you weren't careful."}
+{"location":"Pennsylvania","timestamp":"Thu Apr 21 21:54:38 +0000 2016","tweetId":723268734555545600,"tweetText":"@TheAngryFangirl @UnseenPerfidy I had flu this year, and I FULLY UNDERSTAND HOW PEOPLE CAN DIE FROM IT."}
+{"location":"California","timestamp":"Thu Apr 21 21:57:24 +0000 2016","tweetId":723269430805843969,"tweetText":"RT @endpts: Could Flu Have Caused Prince's Death? Yes. Here's Why https://t.co/KB5Y4Nzwz9 [h/t @doritmi]"}
+{"location":"Washington","timestamp":"Thu Apr 21 22:08:23 +0000 2016","tweetId":723272194890076162,"tweetText":"@md_dc I mean that don't sound like flu, but if you were super dehydrated and no one found you for a few hours...maybe. Yuck, all around."}
+{"location":"Minnesota","timestamp":"Thu Apr 21 22:41:05 +0000 2016","tweetId":723280424076603392,"tweetText":"Did the Chemtrail Flu Kill Prince and Merle Haggard? https://t.co/Xn8I5Tgl72 via @realalexjones"}
+{"location":"Michigan","timestamp":"Thu Apr 21 22:41:16 +0000 2016","tweetId":723280470226530304,"tweetText":"Lots more people die from influenza than people think. 😕 https://t.co/Qe5pd7ynxO"}
+{"location":"Ohio","timestamp":"Thu Apr 21 22:54:40 +0000 2016","tweetId":723283842442891264,"tweetText":"Flu just put a family friend in the hospital for 3 weeks. Kills thousands every year. https://t.co/paVfGFb2Pl"}
+{"location":"New York","timestamp":"Thu Apr 21 23:12:07 +0000 2016","tweetId":723288233895968769,"tweetText":"@aniq that's me for like the first two months of spring. Just alternating between colds/flu/allergies/sinus infections/whatever"}
+{"location":"Georgia","timestamp":"Thu Apr 21 23:15:33 +0000 2016","tweetId":723289097909850112,"tweetText":"That being said, get your flu shot, people"}
+{"location":"Massachusetts","timestamp":"Thu Apr 21 23:19:42 +0000 2016","tweetId":723290142300098560,"tweetText":"@Cernovich Yeah he died of the flu because his HIV fucked his immune system lol"}
+{"location":"Louisiana","timestamp":"Thu Apr 21 23:20:39 +0000 2016","tweetId":723290381392187392,"tweetText":"RT @Juvens90: Did Prince really die from AIDS? Cause this flu thing not adding up..."}
+{"location":"California","timestamp":"Fri Apr 29 16:53:38 +0000 2016","tweetId":726092088350105600,"tweetText":"I would get the flu right before the weekend 🙃"}
+{"location":"Washington","timestamp":"Fri Apr 29 17:09:20 +0000 2016","tweetId":726096039409676288,"tweetText":"RT @StopVaping: Worst movie ever. Gave me swine flu. https://t.co/l6g1I7uFRS"}
+{"location":"Indiana","timestamp":"Fri Apr 29 17:53:25 +0000 2016","tweetId":726107133327085568,"tweetText":"After sleeping for almost 2 days straight bc of the flu, I can't sleep anymore and have to work tonight....perfect!"}
+{"location":"Colorado","timestamp":"Fri Apr 29 18:09:16 +0000 2016","tweetId":726111122118438912,"tweetText":"RT @StopVaping: Worst movie ever. Gave me swine flu. https://t.co/l6g1I7uFRS"}
+{"location":"Texas","timestamp":"Fri Apr 29 18:15:00 +0000 2016","tweetId":726112564946546688,"tweetText":"Boogie Wipes Natural Saline Kids And Baby Nose Wipes For Cold And Flu, 30 Count https://t.co/Hi5t5VXNst"}
+{"location":"New York","timestamp":"Tue Apr 26 18:38:57 +0000 2016","tweetId":725031428568813569,"tweetText":"@Bklynz_Poet stomach flu or food poisoning for 4 days really wears a girl down"}
+{"location":"Louisiana","timestamp":"Tue Apr 26 19:01:37 +0000 2016","tweetId":725037132834820101,"tweetText":"Hoçam, Sandık abi malum bir ayağı çukurova'da ve Osman Gazi köprüsünden önce Sırat'ı geçecek ya?\n@YUSUFYAKUB571 @sadikdurann @hersey_flu"}
+{"location":"Colorado","timestamp":"Tue Apr 26 19:15:12 +0000 2016","tweetId":725040551201017856,"tweetText":"Interesting @unibirmingham study suggests #flu #vaccination 5 times more effective if administered in the morning https://t.co/hRmrvUgpOS"}
+{"location":"Arkansas","timestamp":"Tue Apr 26 19:36:10 +0000 2016","tweetId":725045827622834176,"tweetText":"RT @DerdVeyder: @YUSUFYAKUB571 @sadikdurann @hersey_flu hoçam zannımça Sadık Abi Elfçe dua eddi. Bu yaşda sabasağlam olmasındanda Elf olduğ…"}
+{"location":"California","timestamp":"Tue Apr 26 20:23:32 +0000 2016","tweetId":725057747851612163,"tweetText":"Better to get your flu shot in the morning"}
+{"location":"Washington","timestamp":"Tue Apr 26 21:01:06 +0000 2016","tweetId":725067201779212289,"tweetText":"#Flu vaccinations 'more effective in morning' | via @BBCNews https://t.co/jrgF0D1vrk"}
+{"location":"New Jersey","timestamp":"Tue Apr 26 21:41:22 +0000 2016","tweetId":725077335234465792,"tweetText":"Human metapneunmovirus shows distinct seasonality compared to #RSV and #flu https://t.co/SlFytyYQzs"}
+{"location":"New York","timestamp":"Tue Apr 19 02:23:03 +0000 2016","tweetId":722249120249946112,"tweetText":"Common medicines--cold and flu tablets, heartburn drugs and sleeping pills--'SHRINK the brain, slow down thinking' https://t.co/rvQbHtBTUb"}
+{"location":"Pennsylvania","timestamp":"Tue Apr 19 02:31:07 +0000 2016","tweetId":722251150301532160,"tweetText":"It's April, and 75° out, and I think I have the fucking Flu!\nHow is that even possible???"}
+{"location":"New Mexico","timestamp":"Tue Apr 19 04:13:03 +0000 2016","tweetId":722276802635300864,"tweetText":"RT @TheGoogleFactz: Pineapple juice is 5 times more effective than cough syrup. It also prevents colds and the flu."}
+{"location":"Alabama","timestamp":"Tue Apr 19 05:28:57 +0000 2016","tweetId":722295903487283200,"tweetText":"Tf why y'all can't call em flu games  https://t.co/GVp3nBKhPs"}
+{"location":"Arizona","timestamp":"Thu Apr 28 19:39:00 +0000 2016","tweetId":725771316389773312,"tweetText":"RT @VaxCalc: Kids without #FluShot built up more antibodies across variety of influenza strains than vaccinated kids https://t.co/izyKPmaeg…"}
+{"location":"Missouri","timestamp":"Thu Apr 28 19:57:22 +0000 2016","tweetId":725775938508611584,"tweetText":"At least WebMD thinks it's the flu. I can only identify like 4 symptoms so"}
+{"location":"North Carolina","timestamp":"Thu Apr 28 20:08:02 +0000 2016","tweetId":725778622854914048,"tweetText":"All my boys cold, I'll send them pneumonia(on ya), that prolly flu right by you"}
+{"location":"New York","timestamp":"Thu Apr 28 21:34:42 +0000 2016","tweetId":725800433256697856,"tweetText":"@mgeorge4NY Ways to catch mumps sounds like combo on how to catch mono and flu. Eww."}
+{"location":"Pennsylvania","timestamp":"Thu Apr 28 22:16:12 +0000 2016","tweetId":725810877065232384,"tweetText":"My baby girl has the flu. I feel so bad for her. 😞"}
+{"location":"California","timestamp":"Wed Apr 13 21:59:29 +0000 2016","tweetId":720370852173185024,"tweetText":"RT @WMASHART: #carbonmonoxide can mimic flu like symptoms\n\nGet a #CO alarm to keep you and your family safe\n\n#COaware https://t.co/bMDzNBZS…"}
+{"location":"Utah","timestamp":"Wed Apr 13 22:30:38 +0000 2016","tweetId":720378691327373312,"tweetText":"RT @BGPolitics: Rep David Watkins, sponsor of flu education bill Gov Bevin vetoed for \"gov't intrusion,\" asks why Gov OK intruding into wom…"}
+{"location":"California","timestamp":"Wed Apr 13 22:41:54 +0000 2016","tweetId":720381526677004288,"tweetText":"TotalWellness is #hiring Nurse - Wellness Screenings/Flu Shots, PRN in Muskegon, MI https://t.co/4iQ8WECaav #jobs #Muskegon"}
+{"location":"Rhode Island","timestamp":"Thu Apr 07 16:05:04 +0000 2016","tweetId":718107333109395458,"tweetText":"RT @LHSummers: Each year a small likelihood exists that the world will again suffer an influenza pandemic. Read our @nberpubs paper https:/…"}
+{"location":"Indiana","timestamp":"Thu Apr 07 17:09:15 +0000 2016","tweetId":718123485399293953,"tweetText":"I got the flu 🤒🤕 I'm just so excited to work and be sick🙃"}
+{"location":"District of Columbia","timestamp":"Thu Apr 07 18:21:03 +0000 2016","tweetId":718141554431492096,"tweetText":"@CliffTebow hope you catch swine flu"}
+{"location":"Florida","timestamp":"Thu Apr 07 18:23:19 +0000 2016","tweetId":718142124882059266,"tweetText":"CDC reports slight decline in influenza activity in March https://t.co/gjLor6u9Fq"}
+{"location":"Texas","timestamp":"Thu Apr 07 18:34:40 +0000 2016","tweetId":718144981207093248,"tweetText":"RT @jbloom_lab: Improved deep mutational scanning of influenza. Helper-virus might help others making flu libraries (@virusninja ) https://…"}
+{"location":"California","timestamp":"Thu Apr 07 18:38:22 +0000 2016","tweetId":718145912309088257,"tweetText":"if i have a motherfucking flu the weekend of my date, i'm going to be /so freaking mad/"}
+{"location":"Georgia","timestamp":"Thu Apr 07 18:41:59 +0000 2016","tweetId":718146822489960448,"tweetText":"RT michelleBspeaks: RT ajc: Sad news, Prince fans: He's postponing tonight's Fox Theatre shows due to the flu. Dates TBD … …"}
+{"location":"Nebraska","timestamp":"Tue Apr 05 22:50:10 +0000 2016","tweetId":717484504147857409,"tweetText":"I don't get why I got the flu the same year as @justinbieber?!?"}
+{"location":"South Carolina","timestamp":"Tue Apr 05 23:01:11 +0000 2016","tweetId":717487276591292416,"tweetText":"NESTE SÁBADO: Sesi realiza Dia V de vacinação da comunidade contra a Influenza - https://t.co/1lsFhJ92FW"}
+{"location":"Arizona","timestamp":"Tue Apr 05 23:15:36 +0000 2016","tweetId":717490904647335936,"tweetText":"RT @Ken_Rosenthal: Sources: #Dbacks’ Greinke pitched with flu. Did not come close to missing start; decision that he would pitch was made d…"}
+{"location":"Arizona","timestamp":"Wed Apr 06 00:46:26 +0000 2016","tweetId":717513763608342529,"tweetText":"Greinke had the flu. His pitches flu over the plate and then they flu over the fences. #Dbacks #DbacksOpeningDay #MLBTonight"}
+{"location":"New Jersey","timestamp":"Wed Apr 13 14:22:38 +0000 2016","tweetId":720255882123157504,"tweetText":"@KordellHarold Yeah only ones I'm looking at are the flu games , true blues and space lol in between that all adidas lol"}
+{"location":"New York","timestamp":"Wed Apr 13 14:25:13 +0000 2016","tweetId":720256532244357120,"tweetText":"It started with the flu. VACCINATION https://t.co/m9wavLh311 #Roc #kindle #Zombies #Amazon #AmReading"}
+{"location":"Kentucky","timestamp":"Wed Apr 13 14:34:16 +0000 2016","tweetId":720258809743151104,"tweetText":"RT @BGPolitics: Rep David Watkins, sponsor of flu education bill Gov Bevin vetoed for \"gov't intrusion,\" asks why Gov OK intruding into wom…"}
+{"location":"California","timestamp":"Wed Apr 13 15:13:18 +0000 2016","tweetId":720268632786210816,"tweetText":"RT @FaZeBlaziken: Damn the flu is hitting me hard today. Not sure if i'm gonna upload :/"}
+{"location":"Indiana","timestamp":"Wed Apr 13 16:51:45 +0000 2016","tweetId":720293408552706048,"tweetText":"A week down of being sick with the flu. Finally back at work."}
+{"location":"Tennessee","timestamp":"Wed Apr 13 17:38:07 +0000 2016","tweetId":720305077118873600,"tweetText":"@TiredMommyTales nope. Just told Jenn my stomach felt better last 2 days with flu bug than it does with this anxiety."}
+{"location":"Connecticut","timestamp":"Tue Apr 05 16:04:05 +0000 2016","tweetId":717382309939384325,"tweetText":"Greinke pitched with the flu on Monday  https://t.co/5MMy6gcGqw"}
+{"location":"California","timestamp":"Tue Apr 05 16:11:43 +0000 2016","tweetId":717384230930501632,"tweetText":"#MLB Wire: Greinke pitched with the flu on Monday - Zack Greinke | ARZ https://t.co/i9OU5xXXZ6 https://t.co/hfdg2VNgCJ"}
+{"location":"Utah","timestamp":"Tue Apr 05 16:14:39 +0000 2016","tweetId":717384969119617024,"tweetText":"I love having the flu."}
+{"location":"Massachusetts","timestamp":"Tue Apr 05 17:26:17 +0000 2016","tweetId":717402996242386945,"tweetText":"RT @BPToficial: E saiu a relação de jogadores do Flu para o jogo de amanhã pela Copa do Brasil: Diego Cavalieri, Júlio César, Giovanni, Jon…"}
+{"location":"Florida","timestamp":"Tue Apr 05 17:32:08 +0000 2016","tweetId":717404468439080961,"tweetText":"@Buheezy_The_2nd sound like the flu bruh"}
+{"location":"South Carolina","timestamp":"Tue Apr 05 17:40:54 +0000 2016","tweetId":717406674638790657,"tweetText":"INFLUENZA A: primeiro caso é confirmado na região Sul\n\nA Gerência Regional de Saúde de Araranguá confirmou o... https://t.co/SZGglOGA4N"}
+{"location":"Georgia","timestamp":"Mon Apr 25 14:50:11 +0000 2016","tweetId":724611469686382592,"tweetText":"Kalorama: Late Flu Season Impacts Vaccine Orders, Sales https://t.co/fhL5OoC2ID"}
+{"location":"West Virginia","timestamp":"Mon Apr 25 15:03:52 +0000 2016","tweetId":724614913201692674,"tweetText":"The most random time to have the flu. I'm so miserably sick :("}
+{"location":"Arizona","timestamp":"Mon Apr 25 17:23:52 +0000 2016","tweetId":724650145380364289,"tweetText":"Dear stomach flu, \n\nYOU SUCK AND I HATE YOU"}
+{"location":"Pennsylvania","timestamp":"Sun Apr 03 22:01:49 +0000 2016","tweetId":716747560719949824,"tweetText":"RT @millylacombe: Para quem quer escapar do Fla-Flu eis aqui um blog que fornece ferramentas novas para a análise e entendimento: \nhttps://…"}
+{"location":"South Dakota","timestamp":"Thu Apr 14 15:06:36 +0000 2016","tweetId":720629334541791237,"tweetText":"Tracking and predicting the flu with EMR data. Wow @NorthShoreWeb! #datascience #xgm16 #predictiveanalytics https://t.co/3n2FZLgwpZ"}
+{"location":"Illinois","timestamp":"Thu Apr 14 16:03:24 +0000 2016","tweetId":720643628754841600,"tweetText":"The only good thing about the stomach flu: It lasts about a day. #crackersfordays"}
+{"location":"New York","timestamp":"Thu Apr 14 16:10:13 +0000 2016","tweetId":720645344204296192,"tweetText":"I liked a @YouTube video from @mikekorz https://t.co/BXFYMni9dE Was Michael Jordan's \"Flu Game\" Really a Hangover?"}
+{"location":"Texas","timestamp":"Thu Apr 14 16:13:49 +0000 2016","tweetId":720646250182234112,"tweetText":"@LumpLife as long as it is not malaria or avian flu, you should be OK."}
+{"location":"Texas","timestamp":"Thu Apr 14 16:18:03 +0000 2016","tweetId":720647315522883584,"tweetText":"@PTPASharon @PTPA Yes! I hate flu season! #PTPAParty"}
+{"location":"Georgia","timestamp":"Thu Apr 14 16:34:34 +0000 2016","tweetId":720651472107606020,"tweetText":"Easy Natural Flu Shot Recipe to Boost Immunity https://t.co/olwRgcmnKE"}
+{"location":"West Virginia","timestamp":"Thu Apr 14 16:38:13 +0000 2016","tweetId":720652390660227072,"tweetText":"Just nailed my final presentation with a 100+ degree fever. It was like the Jordan flu game."}
+{"location":"Nevada","timestamp":"Thu Apr 14 17:32:14 +0000 2016","tweetId":720665984374190081,"tweetText":"RT @killyourfm: Presence Podcast Episode 2: Mixed Reality Mojo &amp; The Man Flu Blues https://t.co/EQ8farnNmK Check out the new episode of my…"}
+{"location":"New York","timestamp":"Tue Apr 12 18:38:24 +0000 2016","tweetId":719957860029829120,"tweetText":"How I help keep my family healthy during cold and flu season https://t.co/uUa7BZCZvF"}
+{"location":"Florida","timestamp":"Tue Apr 12 19:38:45 +0000 2016","tweetId":719973047604768769,"tweetText":"@MiamiMadeCB no sick with flu"}
+{"location":"Utah","timestamp":"Tue Apr 12 19:42:05 +0000 2016","tweetId":719973886461239298,"tweetText":"RT @lorenzoOKC: Whoever oops me French blue 12s I got you on flu game 12s"}
+{"location":"California","timestamp":"Tue Apr 12 19:47:52 +0000 2016","tweetId":719975341918281728,"tweetText":"RT @dailynation: 39 children killed, 296 cases reported as Influenza breaks out in Nakuru https://t.co/ezSfc74fuP https://t.co/4nER8s8km0"}
+{"location":"Kansas","timestamp":"Thu Apr 14 22:21:39 +0000 2016","tweetId":720738818488291329,"tweetText":"RT @NoBeeetch: Burger King be like \"Try our new Flu Burger\" https://t.co/t3E7ndL4I1"}
+{"location":"Tennessee","timestamp":"Thu Apr 14 22:34:36 +0000 2016","tweetId":720742077454295044,"tweetText":"RT @BestOfNike: Flu Game 12's. May 28th.https://t.co/ynwwWiAMDf"}
+{"location":"Nevada","timestamp":"Thu Apr 14 22:50:45 +0000 2016","tweetId":720746141734731776,"tweetText":"RT @TheGoogleFactz: Pineapple juice is 5 times more effective than cough syrup. It also prevents colds and the flu."}
+{"location":"New York","timestamp":"Thu Apr 14 23:27:11 +0000 2016","tweetId":720755310491738113,"tweetText":"Jordan Retro 1 Low Lot Ovo Yeezy Lebron Kobe Kd Boost Foam Kyrie Flu Curry  - Bid Now! Onl… https://t.co/BrFG9WHoZt https://t.co/icH5s3gasy"}
+{"location":"North Carolina","timestamp":"Thu Apr 14 23:31:02 +0000 2016","tweetId":720756279380176898,"tweetText":"@ArmandoSalguero maybe Seattle will have 10 starters in bed with the flu that week then it might be close"}
+{"location":"Virginia","timestamp":"Thu Apr 14 23:48:41 +0000 2016","tweetId":720760721126993920,"tweetText":"Dr. Sanchez: Offering Tdap, #influenza vaccine to parents of #NICU infants very effective and  well received. #vaccineswork."}
+{"location":"Florida","timestamp":"Tue Apr 19 17:37:05 +0000 2016","tweetId":722479144265715712,"tweetText":"Come visit us to treat those stubborn cold symptoms! #Sick #RiteCare #UrgentCare #Flu https://t.co/2aOXxBjmkc"}
+{"location":"New Hampshire","timestamp":"Tue Apr 19 17:47:46 +0000 2016","tweetId":722481832793497601,"tweetText":"Factors that may influence influenza vaccine effectiveness: Currently, seasonal flu vaccines are designed to i... https://t.co/tFpZt9rLn9"}
+{"location":"North Carolina","timestamp":"Tue Apr 19 18:15:58 +0000 2016","tweetId":722488929572794368,"tweetText":"Soon as I kick this flu it's back to having fun again"}
+{"location":"Arizona","timestamp":"Mon Apr 11 21:13:45 +0000 2016","tweetId":719634567296983041,"tweetText":"Literally just got over having strep now I have the fucking stomach flu AGAIN are you kidding me 😩😩😩"}
+{"location":"South Carolina","timestamp":"Mon Apr 11 22:42:57 +0000 2016","tweetId":719657015203618817,"tweetText":"I got the flu y'all"}
+{"location":"Virginia","timestamp":"Mon Apr 11 23:07:42 +0000 2016","tweetId":719663243753558016,"tweetText":"I probably just THINK I have the flu but you can't be too careful I better cancel all appts (like the dentist) and meet ups and stay in bed."}
+{"location":"California","timestamp":"Wed Apr 06 19:38:57 +0000 2016","tweetId":717798770738507778,"tweetText":"Flu Deaths Climb to 60 in Countywide Toll https://t.co/wztMPshxrZ"}
+{"location":"Texas","timestamp":"Wed Apr 06 20:28:50 +0000 2016","tweetId":717811324311441408,"tweetText":"RT @gaelynnwoods: 5.0 out of 5 stars Bird flu crime novella hits the mark with a pointed message https://t.co/qK8RTfsLeb …#Thriller #artKNB…"}
+{"location":"North Carolina","timestamp":"Thu Apr 07 19:07:46 +0000 2016","tweetId":718153311065493504,"tweetText":"@Kroeger I was considering going before ya know....then Prince got the flu...."}
+{"location":"Illinois","timestamp":"Thu Apr 07 19:15:27 +0000 2016","tweetId":718155244673372161,"tweetText":"When best friend leaves stuff on your step when your sick with the flu💕💕❤️ she's pretty perfect 😏 @nad_stud22 https://t.co/HaL4DUi2HG"}
+{"location":"Connecticut","timestamp":"Thu Apr 07 19:35:47 +0000 2016","tweetId":718160361686495233,"tweetText":"spring semester: stomach flu ✔️\nregular flu ✔️"}
+{"location":"New York","timestamp":"Thu Apr 07 21:12:01 +0000 2016","tweetId":718184579601973250,"tweetText":"I liked a @YouTube video https://t.co/GVKE54EXtp My React Episode 504: Emily Gets A Flu Shot"}
+{"location":"Texas","timestamp":"Wed Apr 06 16:10:17 +0000 2016","tweetId":717746258060791808,"tweetText":"I have the flu shot"}
+{"location":"Virginia","timestamp":"Wed Apr 06 16:19:06 +0000 2016","tweetId":717748476839333888,"tweetText":"Ugh. Sorry we're closed today on April 6th. We have the flu. Call tomorrow for hours. #homebrew"}
+{"location":"Louisiana","timestamp":"Wed Apr 06 16:47:35 +0000 2016","tweetId":717755644925718528,"tweetText":"RT @UCitizens: Cleveland should have a Blue Flu that day! We love police, want no trouble. We will right the ship and make DJT our nominee!"}
+{"location":"South Carolina","timestamp":"Wed Apr 06 16:52:35 +0000 2016","tweetId":717756903196110852,"tweetText":"My house is quarantined, but anyone who would like to drop off flu meds, Gatorade, or cheesecake is welcome to do so."}
+{"location":"Florida","timestamp":"Tue Apr 05 20:59:07 +0000 2016","tweetId":717456557504602112,"tweetText":"RT @MrMarathon_MH: [Mixtape] Slime Flu 5 Powered by @DatPiff https://t.co/qGM2mBFEW5 #VADO_MH @WTBpromotions #MostHated"}
+{"location":"Massachusetts","timestamp":"Tue Apr 19 20:03:36 +0000 2016","tweetId":722516016383844352,"tweetText":"RT @edmacieldesa: Flu x Atlético-PR: restam apenas três mil ingressos à venda para a final da Primeira Liga #geflu"}
+{"location":"Kansas","timestamp":"Tue Apr 19 22:42:23 +0000 2016","tweetId":722555975534821376,"tweetText":"when you have the flu 4 days before prom☺️"}
+{"location":"Alaska","timestamp":"Mon Apr 25 17:59:34 +0000 2016","tweetId":724659129554345985,"tweetText":"RT @JohnKnechel: @Carib00_dr00L @PoliticalPort I had my last vax 40 years ago; swine flu. Fuck them!"}
+{"location":"Texas","timestamp":"Mon Apr 25 19:03:26 +0000 2016","tweetId":724675202131496960,"tweetText":"RT @rachycollins: ::COLD &amp; FLU PREVENTION :: How to stop a cold in it's tracks - coz I don't have time to get sick #health https://t.co/BET…"}
+{"location":"Iowa","timestamp":"Mon Apr 25 19:07:31 +0000 2016","tweetId":724676229744349184,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"California","timestamp":"Mon Apr 25 19:07:32 +0000 2016","tweetId":724676233951207425,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Texas","timestamp":"Mon Apr 25 19:07:32 +0000 2016","tweetId":724676233951244288,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"New York","timestamp":"Mon Apr 25 19:07:34 +0000 2016","tweetId":724676242331557888,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Louisiana","timestamp":"Mon Apr 25 19:07:42 +0000 2016","tweetId":724676275881783298,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"California","timestamp":"Mon Apr 25 19:07:49 +0000 2016","tweetId":724676305258614784,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Connecticut","timestamp":"Mon Apr 25 19:08:02 +0000 2016","tweetId":724676359771938818,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"California","timestamp":"Mon Apr 25 19:08:19 +0000 2016","tweetId":724676431079460864,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Texas","timestamp":"Mon Apr 25 19:08:20 +0000 2016","tweetId":724676435256840192,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"New York","timestamp":"Mon Apr 25 19:13:44 +0000 2016","tweetId":724677794240688129,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Arizona","timestamp":"Mon Apr 25 19:14:29 +0000 2016","tweetId":724677982950846465,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Colorado","timestamp":"Mon Apr 25 19:15:56 +0000 2016","tweetId":724678347867877376,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"New York","timestamp":"Mon Apr 25 19:20:31 +0000 2016","tweetId":724679501288988676,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Idaho","timestamp":"Mon Apr 25 19:36:18 +0000 2016","tweetId":724683473324101632,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Texas","timestamp":"Mon Apr 25 19:47:33 +0000 2016","tweetId":724686304479318016,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Indiana","timestamp":"Mon Apr 25 19:51:07 +0000 2016","tweetId":724687202031120384,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Ohio","timestamp":"Mon Apr 25 20:11:50 +0000 2016","tweetId":724692415576215556,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"North Carolina","timestamp":"Mon Apr 25 20:17:51 +0000 2016","tweetId":724693929719816192,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"New York","timestamp":"Mon Apr 25 20:32:08 +0000 2016","tweetId":724697524234293248,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"California","timestamp":"Mon Apr 25 20:43:19 +0000 2016","tweetId":724700338624815104,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Texas","timestamp":"Mon Apr 25 20:49:39 +0000 2016","tweetId":724701932430839808,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Texas","timestamp":"Mon Apr 11 17:02:50 +0000 2016","tweetId":719571422025162752,"tweetText":"Last #flu report shows slight increase. Don't let your guard down. Get prevention info here: https://t.co/i5Zbmus1E7 https://t.co/MG8MLB1oLz"}
+{"location":"Kentucky","timestamp":"Mon Apr 11 17:09:24 +0000 2016","tweetId":719573074576846848,"tweetText":"Stop @USDA from baking live birds to death! Ask them to prohibit ventilation shutdown for killing bird flu victims: https://t.co/Xir2WFWlcF"}
+{"location":"Michigan","timestamp":"Mon Apr 11 19:28:28 +0000 2016","tweetId":719608071878766592,"tweetText":"RT @J23app: \"Flu Game\" AJ12\nMay 28th\n📷 @GioGonzalez47 https://t.co/kURQkBm48s"}
+{"location":"Virginia","timestamp":"Fri Apr 22 13:44:52 +0000 2016","tweetId":723507868608155648,"tweetText":"You can die from the Flu, why you all so ignorant? Damn"}
+{"location":"Connecticut","timestamp":"Fri Apr 22 14:07:51 +0000 2016","tweetId":723513652582703105,"tweetText":"Thanks for that info, I hadn't heard that , I hope this flu strain doesn't spread to much https://t.co/ncU3aP2ORJ"}
+{"location":"New York","timestamp":"Fri Apr 22 14:11:25 +0000 2016","tweetId":723514550138638337,"tweetText":"Authentic Nike Air Jordan XII (12) Black/Varsity Red Flu Game size 10.5 NDS! - Bid Now! On… https://t.co/Oe8dGmfAXG https://t.co/XWqPvQGIuq"}
+{"location":"Virginia","timestamp":"Fri Apr 22 14:24:09 +0000 2016","tweetId":723517754574266369,"tweetText":"Did the Chemtrail Flu Kill Prince and Merle Haggard? https://t.co/2mUkUGYa1j via @realalexjones"}
+{"location":"New Jersey","timestamp":"Fri Apr 22 14:43:17 +0000 2016","tweetId":723522569643646976,"tweetText":"So now we're gonna use Prince's death to push flu vaccines?"}
+{"location":"Louisiana","timestamp":"Fri Apr 22 14:44:48 +0000 2016","tweetId":723522951316955136,"tweetText":"RT @HeatherNauert: #foxnews reports on the death of #prince Did he die of a drug overdose and/or was flu a factor? @foxandfriends https://t…"}
+{"location":"New York","timestamp":"Fri Apr 22 15:26:32 +0000 2016","tweetId":723533453858357248,"tweetText":"Authentic Nike Air Jordan XII (12) Black/Varsity Red Flu Game size 10.5 NDS! - Bid Now! On… https://t.co/NXaXsqwLpv https://t.co/3KCTVxgyow"}
+{"location":"Ohio","timestamp":"Fri Apr 22 15:48:49 +0000 2016","tweetId":723539061667934208,"tweetText":"Flu feels #makingthebestofit https://t.co/BF2EJVEdy6"}
+{"location":"New York","timestamp":"Fri Apr 22 16:52:22 +0000 2016","tweetId":723555054519640064,"tweetText":"RT @NewsBreaksLive: Did the #Chemtrail #Flu #Kill Prince and Merle Haggard? (199 comments) https://t.co/PG5NpxLnCQ"}
+{"location":"New York","timestamp":"Fri Apr 22 16:52:30 +0000 2016","tweetId":723555088078241793,"tweetText":"RT @NewsBreaksLive: Did the #Chemtrail #Flu #Kill Prince and Merle Haggard? (199 comments) https://t.co/PG5NpxLnCQ"}
+{"location":"Oregon","timestamp":"Mon Apr 18 03:07:10 +0000 2016","tweetId":721897834694385664,"tweetText":"The flu twice in 8 days? My immune system suuuucks 😫😷😷"}
+{"location":"Washington","timestamp":"Mon Apr 18 03:58:05 +0000 2016","tweetId":721910648288862209,"tweetText":"RT @instant_kicks: Jordan Retro 12 \"Flu Game\" coming back soon.. Who's ready? 👀 https://t.co/AfXCFSHEHp"}
+{"location":"Illinois","timestamp":"Fri Apr 08 16:39:43 +0000 2016","tweetId":718478440958148609,"tweetText":"@BCTGB we almost lost Bernie last week to a doggie flu but he is home now and doing tons better! https://t.co/V9g306UsPN"}
+{"location":"Florida","timestamp":"Fri Apr 08 16:48:02 +0000 2016","tweetId":718480533894746112,"tweetText":"Shannon has the flu. I've slept on the couch a couple nights to be safe. The result? My neck/back are wrecked. Severe pain. This sucks."}
+{"location":"New York","timestamp":"Fri Apr 08 17:24:17 +0000 2016","tweetId":718489656497541120,"tweetText":"#MLB Wire: Brandon Phillips (flu) back in Reds' lineup - Brandon Phillips | CIN https://t.co/Kl0G8YDiD3 https://t.co/Y0V9XAvDZf"}
+{"location":"Kentucky","timestamp":"Fri Apr 15 15:55:34 +0000 2016","tweetId":721004045306052609,"tweetText":"Honestly man.... fuck the flu."}
+{"location":"Ohio","timestamp":"Fri Apr 15 16:03:59 +0000 2016","tweetId":721006163425230849,"tweetText":"RT @shaffire: #Selfie time not posted pics for a few weeks due to flu but im Back... 💋💋💋\n\n#shemale #transsexual #ts #transgender https://t.…"}
+{"location":"California","timestamp":"Fri Apr 15 16:07:40 +0000 2016","tweetId":721007090353852417,"tweetText":"RT @TheDIYHacks: Pineapple juice is 5 times more effective than cough syrup. It also prevents colds and the flu."}
+{"location":"Wisconsin","timestamp":"Fri Apr 15 17:30:34 +0000 2016","tweetId":721027952813731840,"tweetText":"Got myself some of that self-induced bottle flu 🍺😷"}
+{"location":"New York","timestamp":"Fri Apr 15 18:00:34 +0000 2016","tweetId":721035502569263104,"tweetText":"Nike Air Jordan Retro 12 XII Flu Game Size 9 100% Authentic - Bid Now! Only $70.0 https://t.co/jj0xlmOnXf https://t.co/sDZX3JmIJJ"}
+{"location":"Virginia","timestamp":"Fri Apr 15 18:04:21 +0000 2016","tweetId":721036454659538949,"tweetText":"do i go to the squirrels game or stay home bc of flu"}
+{"location":"Indiana","timestamp":"Mon Apr 04 17:52:05 +0000 2016","tweetId":717047101134385152,"tweetText":"I have had the FLU now for over 3 weeks...boooo"}
+{"location":"Indiana","timestamp":"Mon Apr 04 18:14:26 +0000 2016","tweetId":717052725695873024,"tweetText":"RT @EdLatimore: Obesity isnt an \"epidemic\".\nSpanish flu was an epidemic.\nThe plague was an epidemic.\n\nLaziness is a behavior and getting fa…"}
+{"location":"New York","timestamp":"Mon Apr 04 18:34:23 +0000 2016","tweetId":717057746311323649,"tweetText":"Not watching game, but looks like flu may be bothering MadBum a bit #openingdaythoughts"}
+{"location":"Texas","timestamp":"Mon Apr 04 18:34:24 +0000 2016","tweetId":717057750480474112,"tweetText":"For this pitch...don't have the flu? https://t.co/dfs3xBqWcH"}
+{"location":"Arizona","timestamp":"Mon Apr 04 18:48:11 +0000 2016","tweetId":717061219169865729,"tweetText":"Bumgarner flu symptoms getting the best of him? #SFvsMIL"}
+{"location":"New York","timestamp":"Mon Apr 04 18:57:02 +0000 2016","tweetId":717063446366437376,"tweetText":"Madison Bumgarner grinding through the flu. Hard to believe he's human. 🐴 #CapsOn"}
+{"location":"California","timestamp":"Mon Apr 04 19:39:09 +0000 2016","tweetId":717074045338923009,"tweetText":"@gggiants We can always hope Madison is worse in his second start and the flu spreads thru the Giants clubhouse by Friday"}
+{"location":"Florida","timestamp":"Mon Apr 04 19:51:44 +0000 2016","tweetId":717077212072058880,"tweetText":"Shirts To Match Jordan Flu Game 12: More https://t.co/Y12bQRcnLq &lt;&lt; @8and9 Blog"}
+{"location":"Illinois","timestamp":"Mon Apr 04 19:55:22 +0000 2016","tweetId":717078126434471936,"tweetText":"@RaniaAlvi thank you! I've been sick for a week now. This stubborn flu just doesn't wanna leave."}
+{"location":"Massachusetts","timestamp":"Mon Apr 04 20:14:22 +0000 2016","tweetId":717082907911798784,"tweetText":"@2outhits The flu really drains the lifeblood out of you, didn't look right at all today!"}
+{"location":"Texas","timestamp":"Wed Apr 20 21:51:29 +0000 2016","tweetId":722905553987457026,"tweetText":"I liked a @YouTube video from @iamkickz45 https://t.co/YfRSPVoXzS Air Jordan 12 Flu Game 2016"}
+{"location":"Alabama","timestamp":"Wed Apr 20 21:55:12 +0000 2016","tweetId":722906489313054723,"tweetText":"pros of having the flu: greys anatomy all day until i can return to school"}
+{"location":"Massachusetts","timestamp":"Wed Apr 20 22:07:14 +0000 2016","tweetId":722909517609103360,"tweetText":"RT @InfectDisNews: VIDEO: @IcahnMountSinai's Dr. P. Palese discusses the recent progress in universal #flu #vaccine development https://t.c…"}
+{"location":"California","timestamp":"Tue Apr 12 21:38:02 +0000 2016","tweetId":720003066263511040,"tweetText":"Widespread flu activity was reported by Puerto Rico and 25 states (Alaska, Arizona, California, Colorado, Connecticut,,,"}
+{"location":"Ohio","timestamp":"Tue Apr 12 22:45:02 +0000 2016","tweetId":720019927353036801,"tweetText":"RT @RummelsThatGuy: @Mar_Ryz and I both have Influenza A 👫"}
+{"location":"Florida","timestamp":"Tue Apr 12 23:27:06 +0000 2016","tweetId":720030513784877056,"tweetText":"RT @CIDRAP: NEWS SCAN: Long-term #Ebola complications, #chikungunya in blood donors, avian flu in Taiwan, Mexico https://t.co/wkEQ2quZFq"}
+{"location":"New York","timestamp":"Fri Apr 01 15:06:55 +0000 2016","tweetId":715918372014329856,"tweetText":"My stomach flu is gone but Taylor swift rapping to future is enough to bring it back"}
+{"location":"Missouri","timestamp":"Fri Apr 01 15:46:04 +0000 2016","tweetId":715928224430178306,"tweetText":"https://t.co/4LIpETMIsZ VNDS 2009 Jordan 12 XII Retro Flu Game \"Rare\""}
+{"location":"Wisconsin","timestamp":"Fri Apr 01 16:13:38 +0000 2016","tweetId":715935161779486720,"tweetText":"This is no April Fool's Day joke! \n\nIf you haven't gotten your flu shot this season, schedule it today by calling... https://t.co/XItvUnn51g"}
+{"location":"Texas","timestamp":"Mon Apr 18 00:29:18 +0000 2016","tweetId":721858106259419136,"tweetText":"@joeamy07 indeed. flu's been running rampant over here since last Sat"}
+{"location":"Virginia","timestamp":"Mon Apr 18 00:47:55 +0000 2016","tweetId":721862791297175552,"tweetText":"@ArykanotErika @AfricanPrincess Sounds like intestinal flu..."}
+{"location":"Arizona","timestamp":"Sun Apr 03 00:34:16 +0000 2016","tweetId":716423538165424128,"tweetText":"I thought I was over this flu but I am definitely not and im suffering"}
+{"location":"Virginia","timestamp":"Sun Apr 03 02:27:20 +0000 2016","tweetId":716451992332333056,"tweetText":"RT @carolinetmann: \"get the influenza and die\""}
+{"location":"Minnesota","timestamp":"Mon Apr 04 14:33:08 +0000 2016","tweetId":716997033752526848,"tweetText":"RT @EdLatimore: Obesity isnt an \"epidemic\".\nSpanish flu was an epidemic.\nThe plague was an epidemic.\n\nLaziness is a behavior and getting fa…"}
+{"location":"California","timestamp":"Mon Apr 04 14:50:38 +0000 2016","tweetId":717001437755088897,"tweetText":"RT @talhacftc: My current situation; \n#ILL\n#FLU\n 😦 😦 😦"}
+{"location":"New York","timestamp":"Mon Apr 04 15:13:21 +0000 2016","tweetId":717007154587238400,"tweetText":"RT @MIPooh: K9 #influenza Plagues #Chicago's @AntiCruelty\nLaSalle St #Adopt Room Still Closed\n#Dogs\nGet Well Soon Fidos!\nDonate https://t.c…"}
+{"location":"Florida","timestamp":"Mon Apr 04 15:59:04 +0000 2016","tweetId":717018659592404992,"tweetText":"just got over having the flu and now I have strep throat, a sinus infection, &amp; a respiratory infection :)))"}
+{"location":"Virginia","timestamp":"Mon Apr 18 17:25:42 +0000 2016","tweetId":722113891698937856,"tweetText":"RT @landpsychology: Sadness and depression are both contagious and can also spread just as fast as the flu"}
+{"location":"New Mexico","timestamp":"Mon Apr 18 18:00:01 +0000 2016","tweetId":722122527754072064,"tweetText":"Hope you Feel Better PRINCE! He been battling the flu for a few weeks, but on Thursday night he started feeling... https://t.co/GcFbFuF1tB"}
+{"location":"Louisiana","timestamp":"Mon Apr 18 19:02:55 +0000 2016","tweetId":722138357053042688,"tweetText":"RT @kicksonfire: Are You Waiting For The Air Jordan 12 Flu Game? - https://t.co/L6UTPIWwB9 https://t.co/SrqWZBSrwh"}
+{"location":"Texas","timestamp":"Wed Apr 20 04:06:56 +0000 2016","tweetId":722637651183083520,"tweetText":"Yeah I don't think that was the Flu! #Containment @CWContainment"}
+{"location":"Alaska","timestamp":"Wed Apr 20 05:17:23 +0000 2016","tweetId":722655380506025984,"tweetText":"RT @captjohnathan: Forgot about that damn Flu !!"}
+{"location":"New York","timestamp":"Wed Apr 20 05:53:05 +0000 2016","tweetId":722664364726173696,"tweetText":"Nike air jordan 12 french blue retro master wings vivid flu + socks 4 3 5 11 10 - Bid Now!… https://t.co/Upyl1liFqZ https://t.co/ly9hJScZR8"}
+{"location":"Ohio","timestamp":"Tue Apr 12 15:32:18 +0000 2016","tweetId":719911026448326656,"tweetText":"RT @ItsPaulHowell11: If you're about to catch feelings for someone just catch influenza instead"}
+{"location":"Georgia","timestamp":"Tue Apr 12 16:57:56 +0000 2016","tweetId":719932576778084354,"tweetText":"nothin' like bein' hit with flu\nafter all my Spring Break fun. . . — feeling sick"}
+{"location":"Nevada","timestamp":"Fri Apr 29 20:49:09 +0000 2016","tweetId":726151358093516800,"tweetText":"RT @slealey53: Flu Vaccination Ban Goes National After Fever, Convulsions in Children https://t.co/A5SUJlpU7M"}
+{"location":"Nebraska","timestamp":"Fri Apr 29 21:24:36 +0000 2016","tweetId":726160279378092033,"tweetText":"#LNK Lancaster County Weekly Flu Summary Report\nhttps://t.co/zkpIoWQdTC"}
+{"location":"Tennessee","timestamp":"Fri Apr 29 21:33:47 +0000 2016","tweetId":726162590414548996,"tweetText":"Sorry for the lack of commentary on these clips, I'm recovering from the flu #PS4share\nhttps://t.co/PnwUo2ZLEc"}
+{"location":"Utah","timestamp":"Fri Apr 29 21:57:05 +0000 2016","tweetId":726168454047227904,"tweetText":"RT @StopVaping: Worst movie ever. Gave me swine flu. https://t.co/l6g1I7uFRS"}
+{"location":"Texas","timestamp":"Fri Apr 29 22:23:43 +0000 2016","tweetId":726175156574380032,"tweetText":"@Trippopolis too much gluten causes leaky gut syndrome which makes you believe in chemtrails which give you the flu and a urge to eat bread."}
+{"location":"Michigan","timestamp":"Fri Apr 29 22:36:39 +0000 2016","tweetId":726178411324952577,"tweetText":"Planned on slippers on feet and beer in hand tonight. Instead it's rubber gloves &amp; cleaning up after child with stomach flu 😩"}
+{"location":"California","timestamp":"Fri Apr 22 17:41:19 +0000 2016","tweetId":723567373207261184,"tweetText":"RT @statnews: Did the flu kill Prince? We don’t know for sure, but experts say it’s possible https://t.co/ElnzINapJs https://t.co/3fxFVNk6w6"}
+{"location":"Florida","timestamp":"Fri Apr 22 18:43:42 +0000 2016","tweetId":723583072495656960,"tweetText":"@aspiritcan  this graphic may have been true previously. look here (https://t.co/fB6JCAtOgJ). 4 of 7 flu vaccines currently are below 1mcg."}
+{"location":"Tennessee","timestamp":"Fri Apr 22 19:13:58 +0000 2016","tweetId":723590689343201280,"tweetText":"Additions to @memgrizz injury list:\n• JaMychal Green - PROBABLE, Flu-Like Symptoms\n• Jarell Martin - OUT, Sore Left Foot (Done for year)"}
+{"location":"Pennsylvania","timestamp":"Fri Apr 22 20:17:25 +0000 2016","tweetId":723606657067016192,"tweetText":"RT @eliowa: If Prince did die of influenza that would rank 2015-2016 as the worst influenza season since 1918"}
+{"location":"Maryland","timestamp":"Mon Apr 18 21:10:30 +0000 2016","tweetId":722170464441888769,"tweetText":"OpenTable reservation data/cancellations can predict flu outbreaks - crazy! #force2016"}
+{"location":"Michigan","timestamp":"Mon Apr 18 21:22:38 +0000 2016","tweetId":722173517903589376,"tweetText":"@AlexIssa23 @LoganShadaia cuz i got the flu and aint supposed to do anything till thursday or later so im tweet watchin"}
+{"location":"Virginia","timestamp":"Mon Apr 18 22:51:30 +0000 2016","tweetId":722195881957670912,"tweetText":"Flu Games 👍🏾"}
+{"location":"Pennsylvania","timestamp":"Sat Apr 02 02:25:06 +0000 2016","tweetId":716089042442518528,"tweetText":"RT @AmazingSprtsPic: The Flu Game. https://t.co/Rm1M52PJtq"}
+{"location":"Texas","timestamp":"Sun Apr 03 17:50:21 +0000 2016","tweetId":716684277081972736,"tweetText":"RT @SOFWRESTLING: Listening to @TheChrisChicago on @Rapzilla don't sound right as he has Flu 😷"}
+{"location":"Kentucky","timestamp":"Sun Apr 03 18:05:21 +0000 2016","tweetId":716688051959889920,"tweetText":"RT @HHS_Health: Not sure where to #GetAFluVax? Use the Flu Vaccine Finder &amp; #GetVaccinated https://t.co/bHyHrR4W6z"}
+{"location":"Indiana","timestamp":"Sun Apr 03 18:47:55 +0000 2016","tweetId":716698764195598337,"tweetText":"RT @prince: DESPITE INFLUENZA, THIS PLANET IS PRICELESS! https://t.co/nR4k6Voxvm"}
+{"location":"Illinois","timestamp":"Sun Apr 03 20:08:53 +0000 2016","tweetId":716719140120059904,"tweetText":"@EKirichkow yeah. It must've been the same flu that you had............."}
+{"location":"Washington","timestamp":"Sat Apr 30 18:21:56 +0000 2016","tweetId":726476697646862341,"tweetText":"@JayIsAJedi Having the flu can be rough! Did you know that our #HealtheXpress can diagnose and treat you from home? https://t.co/2L4P7OaEch"}
+{"location":"New York","timestamp":"Sat Apr 30 18:40:50 +0000 2016","tweetId":726481453991759873,"tweetText":"AIR JORDAN 12 XII SZ 10.5 MASTER FLU GAME BRED FRENCH BLUE WINGS TAXI XI VI XIII - Bid Now… https://t.co/SbZ2wTOO81 https://t.co/0iwlC6RVj5"}
+{"location":"Arizona","timestamp":"Sat Apr 30 19:27:29 +0000 2016","tweetId":726493193861132288,"tweetText":"Being sick with the flu and also having 102° fever at the same time on Saturday is absolutely incredible"}
+{"location":"Arizona","timestamp":"Sun Apr 24 21:41:44 +0000 2016","tweetId":724352651765243904,"tweetText":"I have the stomach flu. happy Sunday☺️🌷"}
+{"location":"Illinois","timestamp":"Sun Apr 24 22:04:20 +0000 2016","tweetId":724358339270856704,"tweetText":"@getdizzzy @FiveOutOfKevin stomach flu, aka gastroenteritis"}
+{"location":"Pennsylvania","timestamp":"Sun Apr 24 23:07:25 +0000 2016","tweetId":724374214673858561,"tweetText":"The flu is no joke."}
+{"location":"California","timestamp":"Sun Apr 24 23:34:49 +0000 2016","tweetId":724381110138871808,"tweetText":"@JrLuvsSports @JerryMarkon the flu?"}
+{"location":"New Jersey","timestamp":"Sun Apr 24 23:40:40 +0000 2016","tweetId":724382582335496192,"tweetText":"Anyone else convinced MJ's flu game was actually a hangover? Either way shits insane"}
+{"location":"South Carolina","timestamp":"Sun Apr 10 20:43:28 +0000 2016","tweetId":719264558389571586,"tweetText":"Faz quantos jogos que o Flu não leva gol, só faz?"}
+{"location":"Colorado","timestamp":"Sun Apr 10 21:47:37 +0000 2016","tweetId":719280702227881985,"tweetText":"'flu bate voltaço e volta a ponta' hahahahaha"}
+{"location":"Indiana","timestamp":"Sun Apr 10 22:10:06 +0000 2016","tweetId":719286360373399553,"tweetText":"Playing w stomach flu and migraine all day..."}
+{"location":"Virginia","timestamp":"Wed Apr 20 13:15:40 +0000 2016","tweetId":722775744460505088,"tweetText":"Looks like I'm gonna play my game today with the flu #hype"}
+{"location":"New York","timestamp":"Wed Apr 20 15:24:13 +0000 2016","tweetId":722808095135690756,"tweetText":"Nike Air Jordan Retro 12 XII \"Flu Game\"  130690-065 Size 10.5 NEW DEADSTOCK - Bid Now! Onl… https://t.co/mPrvmglp6f https://t.co/FftwMUjWhm"}
+{"location":"Michigan","timestamp":"Sat Apr 23 00:39:05 +0000 2016","tweetId":723672507652272129,"tweetText":"#THEMBNG .COM #NEWS: Flu Season, Still Here https://t.co/5K5mQjdCuU #MICHIGAN #LANSING"}
+{"location":"New Jersey","timestamp":"Sat Apr 23 01:11:10 +0000 2016","tweetId":723680581654089730,"tweetText":"I was just joking n said to my mom im gonna die from this flu like Prince did (RIP) n my sister goes \"you mean Elvis\" ..I cant"}
+{"location":"Michigan","timestamp":"Sun Apr 24 18:26:48 +0000 2016","tweetId":724303595210969089,"tweetText":"RT @PhillyD: Weak.  Its like the kid who got picked last for everything...and then that kid got the flu...and then hit by a bus. https://t.…"}
+{"location":"Texas","timestamp":"Thu Apr 21 15:37:54 +0000 2016","tweetId":723173926512123904,"tweetText":"Check out CDC’s BAM! Body&amp;Mind website with updated #flu content for kids. #CDCBAMkids #healthykids https://t.co/UvTz7Hv2uk #MSDCenter"}
+{"location":"New York","timestamp":"Sat Apr 02 18:18:29 +0000 2016","tweetId":716328969193263104,"tweetText":"The flu + My Bed = My Saturday 😷"}
+{"location":"Massachusetts","timestamp":"Thu Apr 14 05:17:42 +0000 2016","tweetId":720481133029433344,"tweetText":"Once my knee is right I'm chucking up shots . Alcohol shots , basketball shots, flu shots."}
+{"location":"California","timestamp":"Thu Apr 14 05:35:50 +0000 2016","tweetId":720485696415383557,"tweetText":"Damm Jordan caught the flu again Thanks for a lot Curry https://t.co/lhj3uOoAmE"}
+{"location":"Virginia","timestamp":"Thu Apr 14 05:47:24 +0000 2016","tweetId":720488607291727876,"tweetText":"I Keep Getn Cold Den Hot Hope Ion Got The Flu Moe 😓 #️⃣ButtButt👑"}
+{"location":"Illinois","timestamp":"Thu Apr 14 06:37:10 +0000 2016","tweetId":720501131479224320,"tweetText":"@Papi_Chanpu The flu is a conspiracy"}
+{"location":"Washington","timestamp":"Mon Apr 11 13:55:17 +0000 2016","tweetId":719524223530745856,"tweetText":"having the flu for four days can really fuck with your schedule"}
+{"location":"Virginia","timestamp":"Mon Apr 11 14:41:26 +0000 2016","tweetId":719535837583683584,"tweetText":"@Serg1995_ what you gonna flu cross countries to get your ass beat. Gtf you act like a bitch and look like one. 🙏🏾"}
+{"location":"New York","timestamp":"Mon Apr 11 15:00:38 +0000 2016","tweetId":719540669388361729,"tweetText":"MT @BellevueHosp: It is still Flu season: Fight #flu--Get vaccinated. Get yours here any weekday. https://t.co/lTh7RNMrHu"}
+{"location":"Kentucky","timestamp":"Fri Apr 01 20:13:40 +0000 2016","tweetId":715995568145870848,"tweetText":"I can't wait to be done with the flu"}
+{"location":"Ohio","timestamp":"Fri Apr 01 20:27:58 +0000 2016","tweetId":715999166858719232,"tweetText":"Get through this cold &amp; flu season w/ Pfizer Pediatric Enter to #win a #SickJustGotReal prize pack @Crystalnjoe1105 https://t.co/7CeBXmDaQ8"}
+{"location":"Texas","timestamp":"Fri Apr 01 20:32:10 +0000 2016","tweetId":716000223861084161,"tweetText":"RT @gaelynnwoods: 5.0 out of 5 stars Bird flu crime novella hits the mark with a pointed message https://t.co/qK8RTfKmCL …#Thriller #artKNB…"}
+{"location":"Texas","timestamp":"Fri Apr 01 21:35:34 +0000 2016","tweetId":716016178976595968,"tweetText":"RT @RylandJones8: @HollandTanis @Cookies yeah I'd rather have swine flu, measles, and Ebola over autism any day 👌🏻"}
+{"location":"Arizona","timestamp":"Fri Apr 01 23:23:00 +0000 2016","tweetId":716043215464345600,"tweetText":"Ugh stomach flu not cool."}
+{"location":"California","timestamp":"Fri Apr 01 23:28:21 +0000 2016","tweetId":716044561848471553,"tweetText":"Freaking flu SHU SHU! Go away! https://t.co/rKQvtrhqH7"}
+{"location":"Maryland","timestamp":"Tue Apr 19 13:50:32 +0000 2016","tweetId":722422131104079872,"tweetText":"RT @healthmap: 50 #flu cases reported in #Texas County - @houstonheraldhttp://ow.ly/4mQPWc"}
+{"location":"New York","timestamp":"Fri Apr 08 23:30:38 +0000 2016","tweetId":718581851519086596,"tweetText":"although i have recovered from that flu by now."}
+{"location":"Kentucky","timestamp":"Sat Apr 09 00:17:01 +0000 2016","tweetId":718593524258729984,"tweetText":"RT @ReggieThomasKY: Flu remains widespread in Kentucky https://t.co/ZdtXezvc7c https://t.co/x4ZKcUeGMD"}
+{"location":"Pennsylvania","timestamp":"Sat Apr 09 00:48:17 +0000 2016","tweetId":718601392760430592,"tweetText":"RT @icemancometh: Sami Vatanen (flu) and Rickard Rakell (appendix) not traveling with  Ducks to Colorado. Jakob Silfverberg fine after gett…"}
+{"location":"Oklahoma","timestamp":"Fri Apr 15 19:23:01 +0000 2016","tweetId":721056251807813632,"tweetText":"Flu finally gone 🙄"}
+{"location":"Texas","timestamp":"Fri Apr 15 19:37:49 +0000 2016","tweetId":721059976341430272,"tweetText":"This is @JENND0DD. She has Influenza-B. Willie, TV appearance and @TopgolfSAT has been canceled. Repeat: CANCELED https://t.co/FSlo0elFjH"}
+{"location":"New York","timestamp":"Sun Apr 17 21:08:17 +0000 2016","tweetId":721807518750666752,"tweetText":"-after not being at work for 4 days bc of the flu- coworkers: omg you look AWFUL and sound like shit"}
+{"location":"California","timestamp":"Sun Apr 17 21:19:10 +0000 2016","tweetId":721810257610051584,"tweetText":"@AllieLarkin my boss and his wife got a hell flu. I think I'm in the clear thankfully, been 2 weeks since the second got it."}
+{"location":"Louisiana","timestamp":"Sun Apr 10 17:59:10 +0000 2016","tweetId":719223210911391744,"tweetText":"RT @DoentesPFutebol: Fred diz que não joga mais com Levir e futuro no Flu será definido até terça-feira\nhttps://t.co/OJERqFULcs https://t.c…"}
+{"location":"District of Columbia","timestamp":"Sun Apr 10 18:49:49 +0000 2016","tweetId":719235957413707776,"tweetText":"Gonna need The Gayborhood to quiet down Sunday Funday so I can succumb to this long awaited cold and/or flu in peace"}
+{"location":"California","timestamp":"Sun Apr 10 19:20:38 +0000 2016","tweetId":719243712690192384,"tweetText":"The one bright spot of getting the worst flu I've had in years is I'm really breaking in my brand new fleece sweatpants. #fluShotNextYear"}
+{"location":"Georgia","timestamp":"Sun Apr 10 19:49:09 +0000 2016","tweetId":719250889152864257,"tweetText":"RT @SoleCaptive: Jordan 12 \"Flu Game\" 2016 release Preorder! Men's sizes! $250 🔥💯 https://t.co/WuhDwMOGKh"}
+{"location":"North Carolina","timestamp":"Sat Apr 30 02:13:03 +0000 2016","tweetId":726232870184968192,"tweetText":"RT @NBNathanKress: @NathanKress I'm starting to think you're a hazard to yourself in 2016.  Flu, twisted muscles and now burned nipples ...…"}
+{"location":"California","timestamp":"Sat Apr 30 04:20:57 +0000 2016","tweetId":726265057273761797,"tweetText":"RT @StephGhost: Rivers busted eye game &gt; Jordan flu (hangover) game"}
+{"location":"New York","timestamp":"Sat Apr 30 04:38:32 +0000 2016","tweetId":726269482252046336,"tweetText":"Nike Air Jordan 12 Retro XII Flu Game Black Varsity Red 136001-063 SZ9.5 N-5773 - Bid Now!… https://t.co/nB8RiASeOv https://t.co/kkiPTNGKWW"}
+{"location":"New York","timestamp":"Sat Apr 30 05:18:38 +0000 2016","tweetId":726279573764214784,"tweetText":"Flu Game Sick"}
+{"location":"Georgia","timestamp":"Fri Apr 22 20:56:09 +0000 2016","tweetId":723616404637802496,"tweetText":"#MLB Wire: Flu forces Felix to miss start against Angels https://t.co/svzgBmFTSf https://t.co/mQtcdHFEn7"}
+{"location":"Ohio","timestamp":"Fri Apr 22 20:57:00 +0000 2016","tweetId":723616618522103808,"tweetText":"We are being admitted.  Running Flu, RSV screens.  Sadly we are kind of professionals at this."}
+{"location":"California","timestamp":"Fri Apr 22 21:08:30 +0000 2016","tweetId":723619512604581889,"tweetText":"Go rummaging in the dumpster for used needles; one will bound to behave remains of a flu shot. #BadParentingTechniques"}
+{"location":"Florida","timestamp":"Fri Apr 22 21:17:17 +0000 2016","tweetId":723621723011223553,"tweetText":"Avian Flu Diary: Polio Vaccines: The Big Switch Begins https://t.co/ZbQeMlzOcG"}
+{"location":"Florida","timestamp":"Fri Apr 22 22:07:55 +0000 2016","tweetId":723634465285771269,"tweetText":"RT @J23app: “Flu Game” AJ12’s on-feet 🔥\n📷 @HEIRMJ https://t.co/d4fzgAt4ME"}
+{"location":"Michigan","timestamp":"Fri Apr 22 22:15:40 +0000 2016","tweetId":723636415645380609,"tweetText":"RT @RonSavageEMT: No cause of death yet but his publicist confirms the 57 yr old Prince was treated for the flu. More @FOX2News 10 PM https…"}
+{"location":"Texas","timestamp":"Fri Apr 22 22:37:20 +0000 2016","tweetId":723641868257370112,"tweetText":"Prince didn't die from the \"flu\" someone killed prince"}
+{"location":"Tennessee","timestamp":"Fri Apr 29 13:00:58 +0000 2016","tweetId":726033535883182081,"tweetText":"Serena to miss Madrid Open, citing flu - Serena Williams' health woes continue in 2016 after she pulled out of ... https://t.co/XElZksukMV"}
+{"location":"New Jersey","timestamp":"Fri Apr 29 13:33:54 +0000 2016","tweetId":726041823840444417,"tweetText":"Well, I have the flu and a double ear infection. Quarantined for the weekend."}
+{"location":"Pennsylvania","timestamp":"Fri Apr 29 13:34:59 +0000 2016","tweetId":726042096461713410,"tweetText":"Great tips! ACV truly works for so many things! RT 5 Ways to Help Fight Stomach Flu Naturally  - https://t.co/Er6XtzDPXf via @oboyorganic"}
+{"location":"Texas","timestamp":"Fri Apr 29 14:40:20 +0000 2016","tweetId":726058542331895808,"tweetText":"Serena to miss Madrid Open, citing flu: Serena Williams' health woes continue in 2016 after she pu... https://t.co/SRygJf8PGM @demoski02"}
+{"location":"California","timestamp":"Sun Apr 10 00:47:05 +0000 2016","tweetId":718963478652854272,"tweetText":"So does Grienke still have the flu?"}
+{"location":"New York","timestamp":"Sun Apr 10 02:15:28 +0000 2016","tweetId":718985721026121728,"tweetText":"I am so sick like the flu"}
+{"location":"New York","timestamp":"Sat Apr 16 01:20:54 +0000 2016","tweetId":721146316085161985,"tweetText":"RT @TMZ: UPDATE: Prince has had the flu for weeks. In and out of hospital, but back home now Read More: https://t.co/RqQmnkVYkI"}
+{"location":"Alabama","timestamp":"Sat Apr 16 01:44:26 +0000 2016","tweetId":721152238459174912,"tweetText":"RT @TheDIYHacks: Pineapple juice is 5 times more effective than cough syrup. It also prevents colds and the flu."}
+{"location":"Illinois","timestamp":"Sat Apr 16 01:45:01 +0000 2016","tweetId":721152385238884352,"tweetText":"RT @HuffingtonPost: Prince treated for flu after his plane makes emergency landing https://t.co/l5v6ESkGH8 https://t.co/3wcFe3ugpt"}
+{"location":"Nevada","timestamp":"Sat Apr 16 02:12:15 +0000 2016","tweetId":721159238718984192,"tweetText":"Prince recovering after emergency plane landing due to flu: report https://t.co/CAG41RQVZX https://t.co/zh3F8XAsrI"}
+{"location":"Nevada","timestamp":"Sat Apr 16 03:14:20 +0000 2016","tweetId":721174862497120256,"tweetText":"RT @MonicaOJackson: UPDATE! A source close 2 the @Prince camp tlls me he's fine &amp; restng at home after emrgncy landng n Illinois. Flu-like…"}
+{"location":"Maryland","timestamp":"Sat Apr 16 04:02:36 +0000 2016","tweetId":721187009235140612,"tweetText":"I guess I'm supposed to act like I have the flu get the fuck over it so everyone can go back to their happy lives https://t.co/TCc63kfUqv"}
+{"location":"California","timestamp":"Sat Apr 09 19:01:25 +0000 2016","tweetId":718876488779476994,"tweetText":"how tf do you contract the stomach flu ?"}
+{"location":"New York","timestamp":"Sat Apr 02 22:37:47 +0000 2016","tweetId":716394224183287808,"tweetText":"vou ver o jogo do Flu"}
+{"location":"Pennsylvania","timestamp":"Sat Apr 02 23:10:13 +0000 2016","tweetId":716402386273771520,"tweetText":"Approaching week 2 of the flu; maybe this bottle of wine will kill it"}
+{"location":"Massachusetts","timestamp":"Sat Apr 02 23:26:50 +0000 2016","tweetId":716406568028344320,"tweetText":"@paris_beaudette iv been having them for a week straight, now I have the flu becareful"}
+{"location":"New York","timestamp":"Fri Apr 15 21:51:50 +0000 2016","tweetId":721093702740021249,"tweetText":"RT @mommye: Keeping The Pantry Stocked With Cold And Flu Supplies From @Target https://t.co/kNz264u87V #SickJustGotReal #Target https://t.c…"}
+{"location":"Louisiana","timestamp":"Fri Apr 15 22:36:32 +0000 2016","tweetId":721104951875776512,"tweetText":"WTF JE FLU QUOI DANS LA CONVERSATION MEME ????? https://t.co/bUNowpywuy"}
+{"location":"Ohio","timestamp":"Fri Apr 15 23:24:12 +0000 2016","tweetId":721116947572588544,"tweetText":"RT @TMZ: UPDATE: Prince has had the flu for weeks. In and out of hospital, but back home now Read More: https://t.co/RqQmnkVYkI"}
+{"location":"Tennessee","timestamp":"Sat Apr 16 00:01:16 +0000 2016","tweetId":721126275679694849,"tweetText":"I bet 3 people died just so that one doctor could see prince about the flu"}
+{"location":"Maryland","timestamp":"Sat Apr 16 00:18:48 +0000 2016","tweetId":721130688091668480,"tweetText":"RT @SkyNews: Prince Fighting Flu After Emergency Landing https://t.co/11KsA49QhY"}
+{"location":"Indiana","timestamp":"Sat Apr 16 00:28:50 +0000 2016","tweetId":721133213058514944,"tweetText":"Only I would get the flu in spring"}
+{"location":"New York","timestamp":"Sat Apr 30 20:52:34 +0000 2016","tweetId":726514605787348992,"tweetText":"Nike Air Jordan 12 Retro XII Flu Game Black Varsity Red 136001-063 SZ9.5 N-5773 - Bid Now!… https://t.co/QowQckmq8V https://t.co/5SvDrZpxLm"}
+{"location":"Louisiana","timestamp":"Sun Apr 17 17:25:56 +0000 2016","tweetId":721751562540969986,"tweetText":"since the flu is going around, here's my uniform for school https://t.co/Ac5kj1V9hO"}
+{"location":"Georgia","timestamp":"Sun Apr 17 17:47:20 +0000 2016","tweetId":721756948014702592,"tweetText":"Swine Flu Parties? Send Your Regrets, Experts Say https://t.co/7h5jGtpgDm"}
+{"location":"California","timestamp":"Sun Apr 17 18:24:17 +0000 2016","tweetId":721766246786555904,"tweetText":"This stomach flu is killing me"}
+{"location":"Oregon","timestamp":"Sun Apr 17 18:25:20 +0000 2016","tweetId":721766511040471041,"tweetText":"RT @MyDoctorSteve: The Looming Threat of Avian Flu https://t.co/k2sfM6Oe7g"}
+{"location":"California","timestamp":"Fri Apr 22 02:57:50 +0000 2016","tweetId":723345037363281926,"tweetText":"@ctrlaiden I heard the flu thing was a cover and he actually had an overdose and died after ):"}
+{"location":"Georgia","timestamp":"Fri Apr 22 04:08:54 +0000 2016","tweetId":723362921879724032,"tweetText":"I really hope the speculations of #PrinceRIP death aren't true...I'm reading HIV, overdose...the flu.  Either way, someone's life has ended."}
+{"location":"Alabama","timestamp":"Fri Apr 22 04:40:50 +0000 2016","tweetId":723370958145220608,"tweetText":"#Prince briefly hospitalized with flu after emergency landing... https://t.co/BS1mcDUqlR"}
+{"location":"Texas","timestamp":"Fri Apr 22 05:33:08 +0000 2016","tweetId":723384119858585602,"tweetText":"RT @KitDaniels1776: Did the Chemtrail Flu Kill #Prince and Merle Haggard? #tcot #tlot https://t.co/YGWPVA0SUU https://t.co/DBBU45W1ff"}
+{"location":"Florida","timestamp":"Sat Apr 16 16:17:00 +0000 2016","tweetId":721371827012960257,"tweetText":"Flu Vaccine Recommendations - By Dr. Sadiq Al-Nakeeb - Whether or not to get... https://t.co/Bdq4S5lFLd #FloridaHealth, #SWF, #SWFHealth"}
+{"location":"Kentucky","timestamp":"Sat Apr 09 19:57:23 +0000 2016","tweetId":718890573239689218,"tweetText":"I been on my Jordan flu game shit all week"}
+{"location":"Texas","timestamp":"Sat Apr 09 19:58:47 +0000 2016","tweetId":718890925582233603,"tweetText":"@tweetemilysears we are on vacation in Hawaii and my gf has the flu...the staff here provided us with liquids and medication didn't have too"}
+{"location":"New York","timestamp":"Sat Apr 09 20:54:58 +0000 2016","tweetId":718905064568569859,"tweetText":"Air jordan xii retro sz 6.5 french blue flu game master flint pink vivid xiii - Bid Now! O… https://t.co/pA2OIliNq5 https://t.co/lHbgzJ0AWl"}
+{"location":"Wisconsin","timestamp":"Sun Apr 03 15:18:54 +0000 2016","tweetId":716646163416555520,"tweetText":"@saraleestacey1 Gotcha. No man flu, actual flu. and I'm not dying, I feel too crummy to be dying."}
+{"location":"California","timestamp":"Sun Apr 03 15:40:16 +0000 2016","tweetId":716651540543483905,"tweetText":"@TaraNotTahra I didn't have the flu"}
+{"location":"California","timestamp":"Sun Apr 03 16:23:55 +0000 2016","tweetId":716662525434011648,"tweetText":"RT @prince: DESPITE INFLUENZA, THIS PLANET IS PRICELESS! https://t.co/nR4k6Voxvm"}
+{"location":"Tennessee","timestamp":"Mon Apr 18 12:40:08 +0000 2016","tweetId":722042026489982976,"tweetText":"📌...oh haaaay - it's just me, Vernie and Peggy (under the covers) checking in ~ the FLU does not… https://t.co/H2fKQAIUWL"}
+{"location":"Texas","timestamp":"Mon Apr 18 15:51:05 +0000 2016","tweetId":722090080601411588,"tweetText":"I have the flu don't bother me today"}
+{"location":"Oklahoma","timestamp":"Mon Apr 18 15:56:32 +0000 2016","tweetId":722091452147208192,"tweetText":"RT @TheDIYHacks: Pineapple juice is 5 times more effective than cough syrup. It also prevents colds and the flu."}
+{"location":"Pennsylvania","timestamp":"Mon Apr 11 03:54:39 +0000 2016","tweetId":719373069215797248,"tweetText":"Anthony brought me flowers and Gatorade because I have the flu. I don't believe that love dies."}
+{"location":"Arkansas","timestamp":"Mon Apr 11 04:10:16 +0000 2016","tweetId":719376999265898496,"tweetText":"@UsedCarSalesTFM this is curing my flu 😍 https://t.co/HcQo6kP5Wh"}
+{"location":"Louisiana","timestamp":"Mon Apr 11 06:31:03 +0000 2016","tweetId":719412428568547328,"tweetText":"Pineapple juice is 5 times more effective than cough syrup. It also prevents colds and the flu."}
+{"location":"Georgia","timestamp":"Sat Apr 09 04:22:43 +0000 2016","tweetId":718655356692467712,"tweetText":"Got the flu and my heart broke"}
+{"location":"Oklahoma","timestamp":"Sat Apr 09 04:22:55 +0000 2016","tweetId":718655407024017409,"tweetText":"@shayshortt @seananmcguire ...Wait, other people don't re-read the Stand when they've got the flu? I figured that was an everyone thing."}
+{"location":"Washington","timestamp":"Sat Apr 09 04:36:41 +0000 2016","tweetId":718658871498313729,"tweetText":"RT @AmillionBuk: Listen to Problem (Flu &amp; Buck) by AmillionBuk #np on #SoundCloud https://t.co/K4D60m3FlP 🙌🏾🙌🏾🙌🏾"}
+{"location":"New York","timestamp":"Sat Apr 09 04:39:43 +0000 2016","tweetId":718659634870009858,"tweetText":"RT @ProteomicsNews: Want to REALLY understand influenza glycoproteomics? Check out this awesome study out of BU: https://t.co/XUibU5BQ96"}
+{"location":"Michigan","timestamp":"Thu Apr 28 12:42:45 +0000 2016","tweetId":725666563643179008,"tweetText":"My nose + throat felt clogged with dust. I wanted to go home and sleep this off like a bad case of the flu. https://t.co/gwDtWo4WE9 #Thurds"}
+{"location":"Indiana","timestamp":"Thu Apr 28 14:10:09 +0000 2016","tweetId":725688558573506560,"tweetText":"RT @engrossingfacts: Depressed people get colds more frequently -- Energetic, happy and relaxed individuals are immune to cold and flu."}
+{"location":"Tennessee","timestamp":"Thu Apr 28 14:23:56 +0000 2016","tweetId":725692027241910272,"tweetText":"I get the flu for the second time in my life and I just so happened to get it the exact day I was supposed to start a new job 🙄😭"}
+{"location":"Oklahoma","timestamp":"Thu Apr 28 14:56:07 +0000 2016","tweetId":725700126455545857,"tweetText":"RT @OKCFOX: Oklahoma's flu season continues to be slow https://t.co/kKLywHZ5xQ"}
+{"location":"Wisconsin","timestamp":"Thu Apr 28 15:05:34 +0000 2016","tweetId":725702504634159104,"tweetText":"RT @mnt: Morning flu shot might be more effective than afternoon https://t.co/rAbG1jqkST https://t.co/PFeqpysJ2A"}
+{"location":"Georgia","timestamp":"Thu Apr 28 15:35:52 +0000 2016","tweetId":725710129862049793,"tweetText":"RT @GaFarmBureau: #Egg prices forecast to fall as industry recovers from bird flu. https://t.co/G9GhU9o795 https://t.co/tegvCUmZfj"}
+{"location":"Virginia","timestamp":"Sat Apr 02 13:49:03 +0000 2016","tweetId":716261164083064832,"tweetText":"@Kid_NameRay I'm going get the flu games"}
+{"location":"Pennsylvania","timestamp":"Sat Apr 02 14:35:19 +0000 2016","tweetId":716272807445966850,"tweetText":"leave it up to me to have the flu"}
+{"location":"New York","timestamp":"Sat Apr 02 15:34:07 +0000 2016","tweetId":716287604950450177,"tweetText":"Not a big fan of 12's i only want the wings and the flu games"}
+{"location":"Illinois","timestamp":"Sat Apr 02 15:57:27 +0000 2016","tweetId":716293477013856256,"tweetText":"Blackout curtains in full effect! Vicks , tissue, remote, laptop and tea. #sick #sickday #cold #flu"}
+{"location":"Louisiana","timestamp":"Sun Apr 24 15:49:44 +0000 2016","tweetId":724264068060725248,"tweetText":"RT @PoetryEngineer: Being from #CostaRica has its benefits-I'd been sick w/ cold-flu 4 few days then I remembered I had #Zepol-thank God ht…"}
+{"location":"Florida","timestamp":"Sun Apr 17 02:29:42 +0000 2016","tweetId":721526018041847809,"tweetText":"RT @SneakerWlRE: Flu Games: Air Jordan 12 OG\n\nhttps://t.co/99W6MFK1oH https://t.co/LNEmdehyos"}
+{"location":"North Carolina","timestamp":"Sun Apr 17 02:29:42 +0000 2016","tweetId":721526018029326338,"tweetText":"RT @SneakerWlRE: Flu Games: Air Jordan 12 OG\n\nhttps://t.co/99W6MFK1oH https://t.co/LNEmdehyos"}
+{"location":"Illinois","timestamp":"Sun Apr 17 02:29:42 +0000 2016","tweetId":721526018020884480,"tweetText":"RT @SneakerWlRE: Flu Games: Air Jordan 12 OG\n\nhttps://t.co/99W6MFK1oH https://t.co/LNEmdehyos"}
+{"location":"Florida","timestamp":"Sun Apr 17 02:56:17 +0000 2016","tweetId":721532707969179648,"tweetText":"Prince briefly hospitalized with flu after emergency landing - https://t.co/QpPGAQjw41 https://t.co/toGy7tXFdK"}
+{"location":"California","timestamp":"Sun Apr 17 03:41:07 +0000 2016","tweetId":721543990642802688,"tweetText":"Our #DFS writer has come down with a bad case of the flu.However,he was able to put together 3 lineups w/abbreviated analysis.FREE tomorrow!"}
+{"location":"Ohio","timestamp":"Sun Apr 17 00:01:09 +0000 2016","tweetId":721488634210304001,"tweetText":"I have the flu and Dylan twisted his ankle and my mom left us so basically send help"}
+{"location":"Louisiana","timestamp":"Sun Apr 17 01:18:31 +0000 2016","tweetId":721508104160944128,"tweetText":"@realitygal The flu can be really scary!"}
+{"location":"Texas","timestamp":"Thu Apr 07 12:45:44 +0000 2016","tweetId":718057169229221890,"tweetText":"Well: Flu Shot During Pregnancy May Reduce Risk of Stillbirths: The flu vaccine has major benefits for both mo... https://t.co/05AWWHEPZM"}
+{"location":"Maryland","timestamp":"Thu Apr 07 14:32:45 +0000 2016","tweetId":718084100850999296,"tweetText":"RT @NIH: .@NIHDirector on the Hill: #7: New vaccines will be readily available including vaccines for #Zika, universal #flu, &amp; possibly #HI…"}
+{"location":"Missouri","timestamp":"Thu Apr 07 14:46:26 +0000 2016","tweetId":718087544383139840,"tweetText":"https://t.co/bvlxcLuSyA Nike Air Jordan 12 Retro Sz 11.5 French Blue Flu Taxi Gamma Concord USA"}
+{"location":"California","timestamp":"Thu Apr 07 15:20:42 +0000 2016","tweetId":718096167880359936,"tweetText":"Everyone is getting the stomach flu , stay home  https://t.co/0rO3cXaq70"}
+{"location":"California","timestamp":"Sun May 01 04:04:07 +0000 2016","tweetId":726623208884031489,"tweetText":"Yoga for when you're sick with a cold or the flu - https://t.co/TdID6wvXxj #yoga #workout https://t.co/rhK29d6GfB"}
+{"location":"California","timestamp":"Sun May 01 04:56:22 +0000 2016","tweetId":726636358026973184,"tweetText":"Popular People Survived the 1918 Flu Pandemic https://t.co/aUbkHxjndc https://t.co/EfHdJOG37H"}
+{"location":"Illinois","timestamp":"Sun May 01 05:33:44 +0000 2016","tweetId":726645761673445376,"tweetText":"You already know I'm getting my man the flu game shoes when they release them."}
+{"location":"California","timestamp":"Sat Apr 02 02:58:36 +0000 2016","tweetId":716097472968269825,"tweetText":"@doctorsensation the fact that you don't like that the data shows flu vaccine safe in pregnancy doesn't change it."}
+{"location":"California","timestamp":"Sat Apr 02 05:55:26 +0000 2016","tweetId":716141974558892032,"tweetText":"Van más de 421 muertes por influenza y 8 mil 510 contagios https://t.co/qbHbfMIa6Y"}
+{"location":"New York","timestamp":"Wed Apr 27 12:12:39 +0000 2016","tweetId":725296600856158208,"tweetText":"One Flu over the Cuckoo's Nest\n#MakeAMovieSick"}
+{"location":"Virginia","timestamp":"Wed Apr 27 13:38:30 +0000 2016","tweetId":725318205703512064,"tweetText":"#makeamoviesick \"One Avian Bird Flu over the Cuckoo's Nest\" @midnight https://t.co/w4EXayZH3w"}
+{"location":"Colorado","timestamp":"Wed Apr 27 14:22:07 +0000 2016","tweetId":725329182209675264,"tweetText":"I have the flu :( guess it's another day in bed for me. — feeling like death"}
+{"location":"Florida","timestamp":"Thu Apr 21 03:08:23 +0000 2016","tweetId":722985304467058688,"tweetText":"RT @joseilan: Flu bota mais um na sala de troféus. Atlético valorizou muito a conquista na final. Título vale pouco? Não. Título é título."}
+{"location":"Illinois","timestamp":"Thu Apr 21 03:58:11 +0000 2016","tweetId":722997837064077312,"tweetText":"@TomahawkNation Of course, having the flu for 2 weeks would probably kill a person..."}
+{"location":"Michigan","timestamp":"Tue Apr 12 03:38:30 +0000 2016","tweetId":719731392813379585,"tweetText":"From AIDS to flu: a health special https://t.co/JqlCAsmTqf"}
+{"location":"Ohio","timestamp":"Tue Apr 12 04:14:01 +0000 2016","tweetId":719740330866651138,"tweetText":"@Twine_Flu plot twist, I'm a raging alcoholic and actually shit my pants at the bar"}
+{"location":"Nevada","timestamp":"Tue Apr 12 05:58:54 +0000 2016","tweetId":719766725621858304,"tweetText":"Strep throat, stomach flu, and double pink eye that now moved into my sinuses in less than 7 days.... Fml"}
+{"location":"Alabama","timestamp":"Sat Apr 30 13:52:25 +0000 2016","tweetId":726408871573610497,"tweetText":"Seeking Past Lessons to Fight Flu https://t.co/c0q65F4XHG"}
+{"location":"Alabama","timestamp":"Sat Apr 30 13:53:14 +0000 2016","tweetId":726409077077626880,"tweetText":"Seeking Past Lessons to Fight Flu https://t.co/P9tiXPpFpC"}
+{"location":"Texas","timestamp":"Sun Apr 10 13:28:29 +0000 2016","tweetId":719155091236716544,"tweetText":"Prayers for Yancey Stevens please. He is ver sick with the flu."}
+{"location":"North Carolina","timestamp":"Sun Apr 10 16:35:28 +0000 2016","tweetId":719202147146010624,"tweetText":"RT @StrategyMgZine: Stay #healthy with some essential flu-season reminders https://t.co/K4wTescm7t #flu #illness #healthyliving #strategy"}
+{"location":"California","timestamp":"Tue Apr 26 11:42:16 +0000 2016","tweetId":724926566795468800,"tweetText":"#Good #Nike Air Jordan XII 12 #Retro (Flu Game) 2004 Size 9.5 #Shoes #Share https://t.co/WCb1CD4zcg https://t.co/fMMBkZyIy5"}
+{"location":"New York","timestamp":"Tue Apr 26 11:45:11 +0000 2016","tweetId":724927300798668800,"tweetText":"RT @sweetpoutine: What do you get in return when you take care of your sick child? \n\nThe flu. You get the the flu."}
+{"location":"Florida","timestamp":"Tue Apr 26 12:33:05 +0000 2016","tweetId":724939355215794176,"tweetText":"Self-reported influenza vaccination and protective serum antibody titers in a cohort of COPD pati.. #Pulmonology https://t.co/xaUFVpc7R5"}
+{"location":"Indiana","timestamp":"Tue Apr 26 12:51:22 +0000 2016","tweetId":724943956346212352,"tweetText":"RT @Michael5SOS: I have the flu so I do apologise if I can't sing tonight lol. let's do this Belfast. SWEAT THE SICKNESS AWAY."}
+{"location":"Delaware","timestamp":"Wed Apr 06 12:16:08 +0000 2016","tweetId":717687332309172225,"tweetText":"@_dedemoreira @patreseamaral @bruno_leo_nardo PARA QQ VERTENTE POLÍTICA, ESTÁ ERRADO ASSOCIAR A IMAGEM DO FLU. ABS"}
+{"location":"California","timestamp":"Wed Apr 06 14:15:23 +0000 2016","tweetId":717717342558543876,"tweetText":"TotalWellness is #hiring Nurse - Wellness Screenings/Flu Shots, PRN in Odessa, TX https://t.co/dhDAzKzgyb #jobs #Odessa"}
+{"location":"Florida","timestamp":"Sat Apr 09 13:15:49 +0000 2016","tweetId":718789515712794624,"tweetText":"@noahfleming Mother Nature must have the flu LOL"}
+{"location":"Colorado","timestamp":"Fri Apr 15 12:19:39 +0000 2016","tweetId":720949708076613632,"tweetText":"RT @eternalastrie: &amp; lets run another spin on things. Have you ever thought about how you get given pills for a flu, and you get another fl…"}
+{"location":"New York","timestamp":"Fri Apr 15 13:24:44 +0000 2016","tweetId":720966086850711553,"tweetText":"While winter is the time of the year for the flu, norovirus and colds, it's also the season we see the most... https://t.co/2t0JJt1oQF"}
+{"location":"New Jersey","timestamp":"Sun Apr 03 04:25:20 +0000 2016","tweetId":716481688012984322,"tweetText":"$ASUV Starting to catch on like the flu. W/any vol/buying pressure this could be the next explosive ticker (avg 17) https://t.co/XUD3dXeLOH"}
+{"location":"California","timestamp":"Sun Apr 03 06:49:43 +0000 2016","tweetId":716518023243235328,"tweetText":"Us three literally just got over the stomach flu two weeks ago, and now this"}
+{"location":"California","timestamp":"Sun Apr 03 07:05:10 +0000 2016","tweetId":716521911379820544,"tweetText":"Yo everyone pray I get over this cold/flu or whatever it is before Tuesday....or idk bout vegas"}
+{"location":"Tennessee","timestamp":"Thu Apr 14 12:19:40 +0000 2016","tweetId":720587324401303552,"tweetText":"RT @JasonKirkSBN: \"Flu\" Game, Kobe's 60 ... are the Jazz a real team or some sort of movie bad guy team"}
+{"location":"California","timestamp":"Thu Apr 14 14:14:33 +0000 2016","tweetId":720616235759566849,"tweetText":"So sick that my whole body aches 😷😞 fuck this flu"}
+{"location":"Texas","timestamp":"Thu Apr 14 14:31:21 +0000 2016","tweetId":720620463588786178,"tweetText":"The flu vaccine protected against a majority of cases this year: https://t.co/0giIwIUFuF"}
+{"location":"California","timestamp":"Tue Apr 05 11:52:15 +0000 2016","tweetId":717318933980831744,"tweetText":"TotalWellness is #hiring Nurse - Wellness Screenings/Flu Shots, PRN in Spring, TX https://t.co/2Is5x6OteQ #jobs #Spring"}
+{"location":"New York","timestamp":"Tue Apr 05 13:06:27 +0000 2016","tweetId":717337607038849027,"tweetText":"#golf #pgasocial Day loses 11 lbs. dealing with flu-like symptoms https://t.co/VbLvg431ao https://t.co/nXV7B1WQTg"}
+{"location":"California","timestamp":"Wed Apr 13 03:43:40 +0000 2016","tweetId":720095080896339968,"tweetText":"RT @fascinatingtip: Pineapple juice is 5 times more effective than cough syrup. It also prevents colds and the flu."}
+{"location":"Massachusetts","timestamp":"Wed Apr 13 04:57:49 +0000 2016","tweetId":720113741342359552,"tweetText":"@helena_flu @fredgol9 esquece Helena! Ele já foi... Pensemos no melhor para o Flu! Ou melhor, oremos por quem decida!"}
+{"location":"California","timestamp":"Mon Apr 25 11:16:06 +0000 2016","tweetId":724557593876766721,"tweetText":"TotalWellness is #hiring Nurse - Wellness Screenings/Flu Shots, PRN in Oroville, CA https://t.co/FhxidvgLnI #jobs #Oroville"}
+{"location":"New York","timestamp":"Mon Apr 25 11:47:16 +0000 2016","tweetId":724565437221093376,"tweetText":"Between the flu, my phone shattering, and my greyhound back to school breaking down, I'm really not sure how this week can get any better!!"}
+{"location":"Texas","timestamp":"Sat Apr 23 05:42:12 +0000 2016","tweetId":723748789433946112,"tweetText":"Nigga said as long as I got this chain on me Ima always have the flu"}
+{"location":"New York","timestamp":"Wed Apr 13 13:54:41 +0000 2016","tweetId":720248848287858691,"tweetText":"The Looming Threat Of Avian Flu: Even at a distance, it was obvious that there was something odd about the com... https://t.co/czPcHpZRi5"}
+{"location":"Missouri","timestamp":"Sat Apr 16 15:00:33 +0000 2016","tweetId":721352587778375682,"tweetText":"https://t.co/Wh8Exb0nAe Nike Air Jordan Retro 12 French Blue Master Flu Doernbecher OVO Yeezy Supreme"}
+{"location":"Pennsylvania","timestamp":"Sat Apr 16 15:01:32 +0000 2016","tweetId":721352835225489409,"tweetText":"RT @serpan99: Impressive how #Prince per4med 2 stellar #PianoAndAMicrophone concerts in #Atlanta while still dealing with the flu! https://…"}
+{"location":"California","timestamp":"Tue Apr 05 04:03:26 +0000 2016","tweetId":717200952403427328,"tweetText":"Flow so sick it gave a nigga the flu\nevertime they rap my verse I got them saying achoo\n👌"}
+{"location":"Washington","timestamp":"Tue Apr 05 04:43:21 +0000 2016","tweetId":717210997765836801,"tweetText":"He doesn't half dead the other day ✋🏾✋🏾 boy said he had the flu ah hell nah"}
+{"location":"California","timestamp":"Tue Apr 05 05:59:08 +0000 2016","tweetId":717230069291294720,"tweetText":"RT @joeschmo_58: Everyone is getting sick and I just got over a flu like two weeks ago 😑"}
+{"location":"Louisiana","timestamp":"Sun Apr 17 12:48:42 +0000 2016","tweetId":721681794492407808,"tweetText":"#Sport #Shoes #Nike Air Jordan 5 Fire Red metallic cement legend VNDS Flu Game bred sz 13 https://t.co/hzJOv32WcZ #Go"}
+{"location":"Ohio","timestamp":"Sun Apr 17 13:28:58 +0000 2016","tweetId":721691927930925056,"tweetText":"First video after the flu #PEACE #ThirdonThird #Dayton https://t.co/twIYKokBV3"}
+{"location":"New York","timestamp":"Sun Apr 17 13:39:52 +0000 2016","tweetId":721694671018278912,"tweetText":"Laying in bed all day (: I've overdone it every day of the flu today I'm just relaxing and letting @Theatre_X take care of me 😍😘❤️"}
+{"location":"Florida","timestamp":"Sun Apr 17 14:17:52 +0000 2016","tweetId":721704234002030592,"tweetText":"And he shall be missed... like my last bout of stomach flu. https://t.co/W6l0o3M4Xs"}
+{"location":"New Hampshire","timestamp":"Mon Apr 04 11:28:08 +0000 2016","tweetId":716950476957175808,"tweetText":"Smoking with the flu probably a bad idea but damn do I feel high"}
+{"location":"Nebraska","timestamp":"Tue Apr 26 04:40:58 +0000 2016","tweetId":724820543170580480,"tweetText":"Last year, my doc literally made me pledge to get a flu shot but I didn't. Now I have a cold and I'm afraid to make an appt. #PeoplePleaser"}
+{"location":"Alaska","timestamp":"Tue Apr 12 11:12:39 +0000 2016","tweetId":719845683365355520,"tweetText":"@OhLawdN0 that 48 hour flu am I right😜"}
+{"location":"Georgia","timestamp":"Fri Apr 22 11:16:55 +0000 2016","tweetId":723470635767197696,"tweetText":"9 countries have boycotted foiegras re bird flu #banfoiegras"}
+{"location":"Missouri","timestamp":"Fri Apr 22 11:38:57 +0000 2016","tweetId":723476180658089984,"tweetText":"RT @NurseTechUSA: Could Flu Have Caused Prince's Death? Yes. Here's Why https://t.co/IkqPWlozJ3 #forbes https://t.co/hy4izKdjO5"}
+{"location":"Florida","timestamp":"Fri Apr 22 11:40:47 +0000 2016","tweetId":723476642031648768,"tweetText":"Been very sick these past few days. Flu is trying to kick my butt, though i shall overcome lol. Cap is looking... https://t.co/hg25HbOn4S"}
+{"location":"Connecticut","timestamp":"Fri Apr 22 12:19:34 +0000 2016","tweetId":723486402156085248,"tweetText":"RT @TheAuthorGuy: So yeah, flu shot, kids."}
+{"location":"New York","timestamp":"Fri Apr 22 12:31:39 +0000 2016","tweetId":723489443034894336,"tweetText":"I wake up on the first day of my show, and I have the flu\nLuck is not a lady she's a little b*tch \n@RussiJoey @JackKreuzer @TheatreProblems"}
+{"location":"New York","timestamp":"Fri Apr 22 12:32:17 +0000 2016","tweetId":723489602443595776,"tweetText":"Could Flu Have Caused Prince's Death? Yes. Here's Why via @forbes https://t.co/99UhAspuKH"}
+{"location":"Tennessee","timestamp":"Fri Apr 22 13:22:09 +0000 2016","tweetId":723502151801135105,"tweetText":"Feeling a little better today. The flu is kicking my tail."}
+{"location":"Colorado","timestamp":"Wed Apr 06 04:35:52 +0000 2016","tweetId":717571502380552192,"tweetText":"@daddyLAC at least you didn't have to watch your $200 mil investment give up 6 runs in 1 inning. Then he goes and claims he has the flu"}
+{"location":"California","timestamp":"Mon Apr 11 12:23:02 +0000 2016","tweetId":719501008045522944,"tweetText":"RT @MeaganShamy: Don't Let the Flu Ruin Your Vacation!  https://t.co/urLZOfN04P #ProductReviews"}
+{"location":"New York","timestamp":"Wed Apr 27 04:48:19 +0000 2016","tweetId":725184780715855872,"tweetText":"Sz 10 Jordan 12 flu game,wings 2016 - Bid Now! Only $182.5 https://t.co/KWLrxXNv4P https://t.co/AFLlCIypYT"}
+{"location":"Texas","timestamp":"Wed Apr 27 05:24:14 +0000 2016","tweetId":725193819457773568,"tweetText":"RT @JustForKicksHD: The \"Flu Game\" 12's\nhttps://t.co/aMGFQWjou3 https://t.co/IE5w5AvI47"}
+{"location":"New York","timestamp":"Fri Apr 01 12:38:10 +0000 2016","tweetId":715880937821593600,"tweetText":"James Murphy's 'Flu Game': Early on during LCD Soundsystem's Monday night show at Webster Hall in New York City,… https://t.co/Hs3hOhHjyM"}
+{"location":"Maryland","timestamp":"Fri Apr 01 13:17:33 +0000 2016","tweetId":715890848991473665,"tweetText":"It may have been a milder #flu season, but #fluvax still helped cut chance you’d need to see a doctor by 60%! https://t.co/0ro3wSSLfw"}
+{"location":"South Dakota","timestamp":"Wed Apr 20 13:00:15 +0000 2016","tweetId":722771864733372416,"tweetText":"Protein responsible for flu blues identified - https://t.co/i4srWBmPBt"}
+{"location":"New York","timestamp":"Sat Apr 16 07:07:08 +0000 2016","tweetId":721233448556318722,"tweetText":"RT @anissira: Music icon #Prince recovering at home after severe flu prompts... https://t.co/DU6l3QBMPa"}
+{"location":"South Carolina","timestamp":"Thu Apr 21 10:29:21 +0000 2016","tweetId":723096277379112960,"tweetText":"RT @edmacieldesa: Cícero ergue a taça em Juiz de Fora! Flu campeão da Primeira Liga #geflu https://t.co/cK8Z3v2Jn7"}
+{"location":"Pennsylvania","timestamp":"Thu Apr 21 11:33:06 +0000 2016","tweetId":723112320566743040,"tweetText":"RT @Riskmapintel: Cluster Of Influenza A #Cases At Cheshire Home, Chung Hom Kok https://t.co/yGMlJtj4J2 https://t.co/sg1BCp4JUi"}
+{"location":"Iowa","timestamp":"Thu Apr 21 12:35:35 +0000 2016","tweetId":723128045050028033,"tweetText":"RT @israelflu: Flu é justo campeão da Primeira Liga. Pela altivez e por Levir via @UOLEsporte #UOL https://t.co/s78SCa1BF7"}
+{"location":"New York","timestamp":"Thu Apr 21 12:41:59 +0000 2016","tweetId":723129655633567744,"tweetText":"The flu is kicking my ass ☹"}
+{"location":"Kentucky","timestamp":"Thu Apr 21 12:55:33 +0000 2016","tweetId":723133069809586176,"tweetText":"@merma72 I saw that you have influenza. I'm so sorry that you can't sing Sunday, but your health is more important! Please take care! 💓&amp;HUGS"}
+{"location":"Arizona","timestamp":"Sun Apr 17 05:34:54 +0000 2016","tweetId":721572625147768832,"tweetText":"@cariscanlon @thedevanscanlon oh wait... I ain't comin over if he got the Flu"}
+{"location":"California","timestamp":"Sun Apr 17 07:09:33 +0000 2016","tweetId":721596444579209216,"tweetText":"RT @hollymaehenry: yeah the song is catchy. so is the flu. what is ur point."}
+{"location":"Arizona","timestamp":"Sun Apr 17 07:37:55 +0000 2016","tweetId":721603583305781248,"tweetText":"Prince Resting at Home After Hospitalized for Flu https://t.co/Aeu89QXXHK"}
+{"location":"Virginia","timestamp":"Sun Apr 17 08:19:24 +0000 2016","tweetId":721614022924201985,"tweetText":"Got the flu and everything .. Fuck!"}
+{"location":"North Carolina","timestamp":"Sun Apr 24 13:18:18 +0000 2016","tweetId":724225958631239682,"tweetText":"Agree with Dr. Ferguson's answer to \"I have the flu but I need to go to class tomorrow . I'm on tamiflu but is there ...\" - http://htap.u..."}
+{"location":"New York","timestamp":"Fri Apr 29 08:00:00 +0000 2016","tweetId":725957795124793344,"tweetText":"New research proves that morning is the best time to get your flu vaccine https://t.co/vFVRwv9QOm https://t.co/q4At74E5hz"}
+{"location":"Alabama","timestamp":"Fri Apr 29 08:47:52 +0000 2016","tweetId":725969841182498821,"tweetText":"Swine-Flu Hysteria https://t.co/U6w8zWL9gD"}
+{"location":"Alabama","timestamp":"Fri Apr 29 08:48:30 +0000 2016","tweetId":725970000561885185,"tweetText":"Swine-Flu Hysteria https://t.co/hAvqWevzmw"}
+{"location":"Washington","timestamp":"Mon Apr 18 11:35:39 +0000 2016","tweetId":722025798702510081,"tweetText":"@johngordy I'm afraid I'll miss out tonight, as I'm home recovering from the flu. I hope it's a great event!"}
+{"location":"California","timestamp":"Fri Apr 29 11:24:38 +0000 2016","tweetId":726009292801847296,"tweetText":"TotalWellness is #hiring Nurse - Wellness Screenings/Flu Shots, PRN in New Castle, IN https://t.co/lyuucBDaHf #jobs #NewCastle"}
+{"location":"California","timestamp":"Fri Apr 29 11:35:53 +0000 2016","tweetId":726012123952898048,"tweetText":"TotalWellness is #hiring Nurse - Wellness Screenings/Flu Shots, PRN https://t.co/BE1ZjYqzBq #jobs #Bloomington #Healthcare"}
+{"location":"Arizona","timestamp":"Sat Apr 02 12:37:11 +0000 2016","tweetId":716243078235955200,"tweetText":"RT @mymindfulness: How the Flu Dealt Me a Huge Dose of Gratitude https://t.co/tlKAQDDWVe #mindfulness #zen #meditation"}
+{"location":"Alaska","timestamp":"Mon Apr 18 06:59:17 +0000 2016","tweetId":721956248787111937,"tweetText":"@LisaVanderpump .Lisa I hope it's not the flu, I got it and have been sick for over 3 weeks. Get lots of rest!"}
+{"location":"California","timestamp":"Sat Apr 30 05:45:36 +0000 2016","tweetId":726286360126988288,"tweetText":"@malika_andrews @DrewUnga Thats bcuz his bitter ass hates warriors. Lol. He is hoping the whole squad gets the flu the whole series."}
+{"location":"Illinois","timestamp":"Sun Apr 10 09:00:47 +0000 2016","tweetId":719087722325934081,"tweetText":"New flu vaccine protects against multiple strains including H1N1"}
+{"location":"Pennsylvania","timestamp":"Sat Apr 30 11:02:15 +0000 2016","tweetId":726366047733833728,"tweetText":"Flu anuncia superávit de 30 milhões em 2015: \"Melhor do que o esperado\": Demonstração financeira foi divulgada na… https://t.co/4cWYIsS94Q"}
+{"location":"New York","timestamp":"Thu Apr 07 09:10:07 +0000 2016","tweetId":718002907543683072,"tweetText":"RT @writer_s_downes: Flu update ... I have transcended death and I am currently sipping cocktails on a beach with Satan and Santa"}
+{"location":"Washington","timestamp":"Thu Apr 07 11:41:19 +0000 2016","tweetId":718040958248620032,"tweetText":"Well: Flu Shot During Pregnancy May Reduce Risk of Stillbirths https://t.co/EIrZvJEAH3"}
+{"location":"Iowa","timestamp":"Fri Apr 01 09:10:45 +0000 2016","tweetId":715828739716853760,"tweetText":"@CovertBS Good morning, Dear Scarlet!!  I hope You are feeling better this morning and the family is getting over the flu!!  HUGS"}
+{"location":"New York","timestamp":"Fri Apr 01 09:34:18 +0000 2016","tweetId":715834666264215552,"tweetText":"Jordan Retro 12 XII 2013 TAXI Black White SZ 13.5C Flu BRED DS OG RARE BULLS - Bid Now! On… https://t.co/P15SE2WFuH https://t.co/lc2PbqhUsp"}
+{"location":"Louisiana","timestamp":"Wed Apr 27 10:59:05 +0000 2016","tweetId":725278087219302401,"tweetText":"[Continuity Central] Pandemic threat of novel swine flu viruses highlighted https://t.co/4DnyxiLX6H"}
+{"location":"New York","timestamp":"Fri Apr 15 08:14:50 +0000 2016","tweetId":720888097966276609,"tweetText":"Vtg OG 1997 Nike Air Jordan XII 12 s sz 9.5 Flu Game ORIGINAL Black Red DS - Bid Now! Only… https://t.co/BYsopaMZBW https://t.co/spAYi15Z5n"}
+{"location":"Delaware","timestamp":"Fri Apr 15 10:15:09 +0000 2016","tweetId":720918376621539328,"tweetText":"@kubricklover @princess13klt flu? Dang"}
+{"location":"Pennsylvania","timestamp":"Fri Apr 15 11:31:02 +0000 2016","tweetId":720937473313017858,"tweetText":"Modified flu virus can 'resensitize' resistant pancreatic cancer cells to chemotherapy https://t.co/65ccsydwbr"}
+{"location":"New York","timestamp":"Tue Apr 26 08:14:45 +0000 2016","tweetId":724874343495405568,"tweetText":"Natural Help for Cold and Flu Season (thieves oil ... - #diet #fitness #weightloss #fatloss https://t.co/Ce7LpBLrwo https://t.co/gXdYBTzdQ2"}
+{"location":"Virginia","timestamp":"Tue Apr 26 10:07:59 +0000 2016","tweetId":724902839609360384,"tweetText":"what do u do when u know ur gonna have the flu in a few days and there's nothing u can do about it"}
+{"location":"California","timestamp":"Thu Apr 14 09:59:18 +0000 2016","tweetId":720552000002232320,"tweetText":"Swelling? Cold? Flu? Get this sarcastic, good humored card for someone! #etsypreneur #etsyRT #GetWellSoon https://t.co/raehg0SLDg"}
+{"location":"Ohio","timestamp":"Thu Apr 14 10:56:14 +0000 2016","tweetId":720566327707045889,"tweetText":"I took a video of myself when I felt the flu coming on, posted it online and it totally went #viral !!"}
+{"location":"New York","timestamp":"Wed Apr 20 06:51:58 +0000 2016","tweetId":722679183185485824,"tweetText":"Nike Retro Air Jordan 12 Flu Game Size 13 2009 - Bid Now! Only $138.0 https://t.co/NcxewHcnoM https://t.co/7TPD3YWoAg"}
+{"location":"Tennessee","timestamp":"Wed Apr 20 07:01:39 +0000 2016","tweetId":722681620105445376,"tweetText":"like this bitch said her son had flu like symptoms and posted a pick of a rash he had. what the hell"}
+{"location":"Texas","timestamp":"Wed Apr 20 07:16:21 +0000 2016","tweetId":722685319460569088,"tweetText":"Got this flu a nigga sweating like a dog in this hoe"}
+{"location":"New Jersey","timestamp":"Wed Apr 20 08:10:08 +0000 2016","tweetId":722698854466981888,"tweetText":"Dr. Angela answers a question about getting the #FLU shot while being #pregnant: https://t.co/Z8HsYB9eR4 https://t.co/mqLbgSp4Uu"}
+{"location":"Kansas","timestamp":"Tue Apr 05 08:50:56 +0000 2016","tweetId":717273304147447808,"tweetText":"The flu is stupid"}
+{"location":"Maryland","timestamp":"Fri Apr 22 06:54:41 +0000 2016","tweetId":723404642613252096,"tweetText":"RT @JamesNasty: Prince died of the flu?!? In April?!? D"}
+{"location":"Wisconsin","timestamp":"Fri Apr 22 07:00:14 +0000 2016","tweetId":723406039295512576,"tweetText":"RT @johnspatricc: Prince Returns Home After Being Treated For The Flu #Prince... #Prince https://t.co/BWK9Upppdn"}
+{"location":"Oregon","timestamp":"Fri Apr 22 07:18:36 +0000 2016","tweetId":723410661422718976,"tweetText":"RT @lex_looper: You really believe Prince died from the FLU? I'm not saying I know how he died but I honestly doubt a FLU killed him."}
+{"location":"California","timestamp":"Tue Apr 12 10:12:39 +0000 2016","tweetId":719830583904493568,"tweetText":"TotalWellness is #hiring Nurse - Wellness Screenings/Flu Shots, PRN https://t.co/WEoH6AbTSV #jobs #Taylorville #Healthcare"}
+{"location":"Texas","timestamp":"Mon Apr 04 10:19:38 +0000 2016","tweetId":716933238388711425,"tweetText":"5 Recipes to Power Through Cold and Flu Season via @Everydayhealth https://t.co/OzCf1huOlI"}
+{"location":"New York","timestamp":"Mon Apr 25 10:15:17 +0000 2016","tweetId":724542288853143553,"tweetText":"DS Jordan Retro 4 Green Glow sz 12 - FTB Mamba Flu Game NYC X XII Boost Yzy - Bid Now! Onl… https://t.co/qivyIJ8J0b https://t.co/UdAiio55oD"}
+{"location":"District of Columbia","timestamp":"Mon Apr 25 11:00:00 +0000 2016","tweetId":724553542174924800,"tweetText":"Chemtrail Flu: Have You Had It Yet? https://t.co/7XseOliAjS via @conspiracy_club"}
+{"location":"California","timestamp":"Wed Apr 13 10:10:47 +0000 2016","tweetId":720192501995466752,"tweetText":"TotalWellness is #hiring Nurse-Wellness Screenings/Flu Shots, PRN in Berlin, WI https://t.co/7T3CRHbULE #jobs #Berlin #Healthcare"}
